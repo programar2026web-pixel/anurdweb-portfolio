@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnurDweb | Crafting Digital Experiences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#0A0A0A',
+                        'noir-light': '#111111',
+                        cyan: { 400: '#22D3EE', 500: '#06B6D4', 600: '#0891B2' },
+                        emerald: { 400: '#34D399', 500: '#10B981', 600: '#059669' },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ===== MARQUEE ANIMATION ===== */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        .marquee-content {
+            animation: marquee 25s linear infinite;
+        }
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#0A0A0A] text-white relative">
+
+    <!-- ================================================================ -->
+    <!-- LOADING SCREEN -->
+    <!-- ================================================================ -->
+    <div id="loader">
+        <div class="loader-logo">AnurDweb</div>
+        <div class="loader-bar-track">
+            <div class="loader-bar-fill"></div>
+        </div>
+        <div class="loader-percent">0%</div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- MOBILE MENU OVERLAY -->
+    <!-- ================================================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#work" class="mobile-link" data-translate="nav_work">Work</a>
+        <a href="#services" class="mobile-link" data-translate="nav_services">Services</a>
+        <a href="#process" class="mobile-link" data-translate="nav_process">Process</a>
+        <a href="#portfolio" class="mobile-link" data-translate="nav_portfolio">Portfolio</a>
+        <a href="#contact"
+            class="mobile-link mt-4 inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-noir text-base font-bold !text-noir"
+            data-translate="nav_cta">Cotizar
+            Web</a>
+    </div>
+
+    <!-- ===== FLOATING BACKGROUND BLOBS ===== -->
+    <div class="blob w-[500px] h-[500px] bg-cyan-500 opacity-[0.04] top-[-100px] left-[-200px] fixed z-0" id="blob1">
+    </div>
+    <div class="blob w-[400px] h-[400px] bg-emerald-500 opacity-[0.03] bottom-[10%] right-[-150px] fixed z-0"
+        id="blob2"></div>
+    <div class="blob w-[350px] h-[350px] bg-cyan-400 opacity-[0.03] top-[50%] left-[30%] fixed z-0" id="blob3"></div>
+
+    <!-- ===== GRID PATTERN OVERLAY ===== -->
+    <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
+
+    <!-- ===== GIANT AMBIENT LIGHT SPHERES ===== -->
+    <div class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] absolute top-[25%] left-[-15%] pointer-events-none z-0" id="ambient-cyan"></div>
+    <div class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] absolute top-[55%] right-[-20%] pointer-events-none z-0" id="ambient-blue"></div>
+    <div class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] absolute top-[80%] left-[10%] pointer-events-none z-0" id="ambient-purple"></div>
+
+    <!-- ================================================================ -->
+    <!-- NAVBAR -->
+    <!-- ================================================================ -->
+    <header class="nav-glass fixed top-0 left-0 right-0 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-xl font-display font-bold tracking-tight">
+                <span class="gradient-text-mixed">AnurD</span><span class="text-white/80">web</span>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#work"
+                    class="text-sm font-medium text-white/50 hover:text-cyan-400 transition-colors duration-300"
+                    data-translate="nav_work">Work</a>
+                <a href="#services"
+                    class="text-sm font-medium text-white/50 hover:text-cyan-400 transition-colors duration-300"
+                    data-translate="nav_services">Services</a>
+                <a href="#process"
+                    class="text-sm font-medium text-white/50 hover:text-cyan-400 transition-colors duration-300"
+                    data-translate="nav_process">Process</a>
+                <a href="#contact"
+                    class="text-sm font-medium text-white/50 hover:text-cyan-400 transition-colors duration-300"
+                    data-translate="nav_contact">Contact</a>
+            </nav>
+
+            <!-- CTA + Hamburger -->
+            <div class="flex items-center gap-3">
+                <!-- Language Toggle -->
+                <button id="langToggle"
+                    class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-white/50 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-300 cursor-pointer"
+                    aria-label="Toggle language">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.568.422-3.037 1.157-4.29" />
+                    </svg>
+                    <span id="langText">EN</span>
+                </button>
+                <a href="#contact"
+                    class="hidden md:inline-flex btn-primary bg-gradient-to-r from-cyan-500 to-emerald-500 text-noir px-5 py-2 rounded-full text-sm font-bold tracking-wide">
+                    <span data-translate="nav_cta">Cotizar Web</span>
+                </a>
+                <div class="hamburger" id="hamburgerBtn" aria-label="Menu" role="button" tabindex="0">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================================================ -->
+    <!-- HERO SECTION -->
+    <!-- ================================================================ -->
+    <section id="work" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
+
+            <!-- Left Content -->
+            <div class="relative z-10">
+                <!-- Badge -->
+                <div
+                    class="gsap-reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/5 mb-8">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-widest"
+                        data-translate="hero_badge">Disponible para
+                        nuevos proyectos</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1
+                    class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.95] tracking-tight mb-6">
+                    <span class="gsap-reveal block" data-translate="hero_title_1">Creando</span>
+                    <span class="gsap-reveal block gradient-text-cyan neon-cyan"
+                        data-translate="hero_title_2">Experiencias</span>
+                    <span class="gsap-reveal block" data-translate="hero_title_3">Digitales.</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="gsap-reveal text-base lg:text-lg text-white/40 max-w-lg leading-relaxed mb-8 font-light"
+                    data-translate="hero_subtitle">
+                    Dise&ntilde;o y desarrollo de sitios web modernos, r&aacute;pidos y optimizados. Ayudo a negocios
+                    locales a construir su primera presencia digital de alto impacto.
+                </p>
+
+                <!-- CTA Button -->
+                <div class="gsap-reveal flex items-center gap-4">
+                    <a href="#portfolio"
+                        class="btn-primary arrow-hover group inline-flex items-center gap-3 bg-white text-noir px-7 py-3.5 rounded-full text-sm font-bold tracking-wide">
+                        <span data-translate="hero_cta">Ver Portafolio</span>
+                        <span class="arrow-icon inline-block transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Signature -->
+                <div class="gsap-reveal mt-12">
+                    <span class="signature text-lg text-cyan-400/30 tracking-wide">Anuar D&iacute;az</span>
+                </div>
+            </div>
+
+            <!-- Right: Floating Device -->
+            <div class="relative flex items-center justify-center lg:justify-end h-[400px] lg:h-[600px]">
+                <!-- Glow Background -->
+                <div class="absolute w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[100px]"></div>
+
+                <!-- Device Container -->
+                <div class="float-device relative w-[280px] h-[380px] lg:w-[320px] lg:h-[440px]">
+                    <!-- Outer Glass Frame -->
+                    <div class="absolute inset-0 rounded-3xl glass-strong border border-cyan-500/20 pulse-glow"></div>
+
+                    <!-- Inner Screen -->
+                    <div
+                        class="absolute inset-3 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-white/5 overflow-hidden">
+                        <div class="absolute inset-0 p-4">
+                            <div class="w-12 h-1 bg-cyan-400/40 rounded-full mb-3"></div>
+                            <div class="w-20 h-1 bg-white/10 rounded-full mb-2"></div>
+                            <div class="w-16 h-1 bg-white/5 rounded-full mb-6"></div>
+                            <div class="grid grid-cols-3 gap-2 mb-4">
+                                <div class="h-12 rounded-lg bg-cyan-500/10 border border-cyan-500/10"></div>
+                                <div class="h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/10"></div>
+                                <div class="h-12 rounded-lg bg-white/5 border border-white/5"></div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="h-1 bg-white/10 rounded-full w-full"></div>
+                                <div class="h-1 bg-white/10 rounded-full w-3/4"></div>
+                                <div class="h-1 bg-white/10 rounded-full w-1/2"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse">
+                        </div>
+                    </div>
+
+                    <!-- Floating Accent Elements -->
+                    <div
+                        class="absolute -top-4 -right-4 w-16 h-16 rounded-2xl glass border border-cyan-500/20 flex items-center justify-center float-device2">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div
+                        class="absolute -bottom-3 -left-3 w-12 h-12 rounded-xl glass border border-emerald-500/20 flex items-center justify-center float-device">
+                        <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+
+                    <div class="absolute top-[20%] -left-8 w-1.5 h-1.5 bg-cyan-400/40 rounded-full"
+                        style="animation: particleFloat 4s ease-in-out infinite;"></div>
+                    <div class="absolute top-[60%] -right-6 w-1 h-1 bg-emerald-400/30 rounded-full"
+                        style="animation: particleFloat 5s ease-in-out infinite 1s;"></div>
+                    <div class="absolute bottom-[30%] -left-6 w-1 h-1 bg-cyan-300/30 rounded-full"
+                        style="animation: particleFloat 6s ease-in-out infinite 2s;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+            <span class="text-[10px] uppercase tracking-[0.3em] text-white/20 font-mono">Scroll</span>
+            <div class="w-[1px] h-8 bg-gradient-to-b from-cyan-400/40 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION DIVIDER ===== -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ================================================================ -->
+    <!-- CAPABILITIES SECTION -->
+    <!-- ================================================================ -->
+    <section id="services" class="relative py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="capability-line"></div>
+                    <span class="gsap-reveal text-xs font-mono text-cyan-400 uppercase tracking-[0.3em]"
+                        data-translate="services_label">Servicios</span>
+                </div>
+                <h2 class="gsap-reveal text-4xl lg:text-5xl font-display font-bold tracking-tight">
+                    <span data-translate="services_title_1">Lo Que</span> <span class="gradient-text-cyan"
+                        data-translate="services_title_2">Construyo</span>
+                </h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Card 1 -->
+                <div
+                    class="gsap-card glass rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default card-glow">
+                    <div class="flex-shrink-0">
+                        <span class="font-mono text-xs text-white/20 tracking-wider">01 //</span>
+                        <h3
+                            class="text-xl lg:text-2xl font-display font-bold mt-2 text-white/80 group-hover:text-white transition-colors">
+                            Redise&ntilde;o Web</h3>
+                        <p class="text-xs text-cyan-400/60 mt-1 font-mono uppercase tracking-wider">Optimizaci&oacute;n
+                        </p>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-slate-300 text-sm lg:text-base leading-relaxed max-w-2xl"
+                            data-translate="service_1_desc">
+                            Transformaci&oacute;n de p&aacute;ginas lentas u obsoletas en sitios r&aacute;pidos,
+                            modernos y adaptados a cualquier pantalla.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0 hidden lg:block">
+                        <svg class="w-5 h-5 text-white/10 group-hover:text-cyan-400/50 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 17L17 7M17 7H7M17 7v10" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="gsap-card glass rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default lg:ml-12 card-glow">
+                    <div class="flex-shrink-0">
+                        <span class="font-mono text-xs text-white/20 tracking-wider">02 //</span>
+                        <h3
+                            class="text-xl lg:text-2xl font-display font-bold mt-2 text-white/80 group-hover:text-white transition-colors">
+                            P&aacute;ginas de Venta</h3>
+                        <p class="text-xs text-emerald-400/60 mt-1 font-mono uppercase tracking-wider">Conversi&oacute;n
+                        </p>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-slate-300 text-sm lg:text-base leading-relaxed max-w-2xl"
+                            data-translate="service_2_desc">
+                            Creaci&oacute;n de p&aacute;ginas de aterrizaje enfocadas en presentar un producto o
+                            servicio de forma atractiva para capturar clientes potenciales.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0 hidden lg:block">
+                        <svg class="w-5 h-5 text-white/10 group-hover:text-emerald-400/50 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 17L17 7M17 7H7M17 7v10" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="gsap-card glass rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default lg:ml-24 card-glow">
+                    <div class="flex-shrink-0">
+                        <span class="font-mono text-xs text-white/20 tracking-wider">03 //</span>
+                        <h3
+                            class="text-xl lg:text-2xl font-display font-bold mt-2 text-white/80 group-hover:text-white transition-colors">
+                            Ecosistema Digital</h3>
+                        <p class="text-xs text-cyan-400/60 mt-1 font-mono uppercase tracking-wider">Presencia Local</p>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-slate-300 text-sm lg:text-base leading-relaxed max-w-2xl"
+                            data-translate="service_3_desc">
+                            Migraci&oacute;n de negocios tradicionales al internet. Men&uacute;s digitales,
+                            cat&aacute;logos interactivos y enlaces directos a tu WhatsApp o redes.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0 hidden lg:block">
+                        <svg class="w-5 h-5 text-white/10 group-hover:text-cyan-400/50 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 17L17 7M17 7H7M17 7v10" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION DIVIDER ===== -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ================================================================ -->
+    <!-- THE METHOD SECTION -->
+    <!-- ================================================================ -->
+    <section id="process" class="relative py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="capability-line"></div>
+                    <span class="gsap-reveal text-xs font-mono text-cyan-400 uppercase tracking-[0.3em]"
+                        data-translate="process_label">El
+                        Proceso</span>
+                </div>
+                <h2 class="gsap-reveal text-4xl lg:text-5xl font-display font-bold tracking-tight">
+                    <span data-translate="process_title_1">De Idea a</span> <span class="gradient-text-cyan"
+                        data-translate="process_title_2">Realidad</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="gsap-card relative glass rounded-2xl p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
+                    <div class="method-number">01</div>
+                    <div class="relative z-10">
+                        <span class="inline-block font-mono text-xs text-cyan-400/50 tracking-wider mb-4">01</span>
+                        <h3
+                            class="text-xl font-display font-bold mb-4 text-white/80 group-hover:text-white transition-colors">
+                            Descubrimiento</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed" data-translate="process_1_desc">
+                            Inmersi&oacute;n profunda en los requerimientos t&eacute;cnicos, posicionamiento de mercado
+                            y objetivos comerciales del negocio antes de tirar una sola l&iacute;nea de c&oacute;digo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="gsap-card relative glass rounded-2xl p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
+                    <div class="method-number">02</div>
+                    <div class="relative z-10">
+                        <span class="inline-block font-mono text-xs text-cyan-400/50 tracking-wider mb-4">02</span>
+                        <h3
+                            class="text-xl font-display font-bold mb-4 text-white/80 group-hover:text-white transition-colors">
+                            Arquitectura</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed" data-translate="process_2_desc">
+                            Selecci&oacute;n del stack tecnol&oacute;gico ideal y modelado de la interfaz para
+                            garantizar tiempos de carga inferiores a un segundo y una ejecuci&oacute;n impecable.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="gsap-card relative glass rounded-2xl p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
+                    <div class="method-number">03</div>
+                    <div class="relative z-10">
+                        <span class="inline-block font-mono text-xs text-cyan-400/50 tracking-wider mb-4">03</span>
+                        <h3
+                            class="text-xl font-display font-bold mb-4 text-white/80 group-hover:text-white transition-colors">
+                            Lanzamiento</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed" data-translate="process_3_desc">
+                            Integraci&oacute;n continua y lanzamiento optimizado en redes de borde globales, asegurando
+                            disponibilidad total y m&aacute;xima fidelidad visual.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- TECH STACK MARQUEE SECTION -->
+    <!-- ================================================================ -->
+    <section class="relative py-12 overflow-hidden bg-[#111111]/30 border-y border-white/5 z-10">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-transparent to-[#0A0A0A] pointer-events-none z-20"></div>
+        <div class="marquee-container flex whitespace-nowrap overflow-hidden select-none">
+            <div class="marquee-content flex gap-8 shrink-0 min-w-full text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4">
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">HTML5</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">TAILWIND CSS</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">JAVASCRIPT (ES6+)</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">GSAP ANIMATIONS</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">GIT & GITHUB</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">RESPONSIVE DESIGN</span>
+                <span class="text-white/20">//</span>
+            </div>
+            <div class="marquee-content flex gap-8 shrink-0 min-w-full text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4" aria-hidden="true">
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">HTML5</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">TAILWIND CSS</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">JAVASCRIPT (ES6+)</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">GSAP ANIMATIONS</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">GIT & GITHUB</span>
+                <span class="text-white/20">//</span>
+                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">RESPONSIVE DESIGN</span>
+                <span class="text-white/20">//</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION DIVIDER ===== -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ================================================================ -->
+    <!-- SELECTED ARCHIVES (PORTFOLIO) -->
+    <!-- ================================================================ -->
+    <section id="portfolio" class="relative py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="capability-line"></div>
+                    <span class="gsap-reveal text-xs font-mono text-cyan-400 uppercase tracking-[0.3em]"
+                        data-translate="portfolio_label">Laboratorio de
+                        Conceptos</span>
+                </div>
+                <h2 class="gsap-reveal text-4xl lg:text-5xl font-display font-bold tracking-tight">
+                    <span data-translate="portfolio_title_1">Laboratorio de</span> <span class="gradient-text-cyan"
+                        data-translate="portfolio_title_2">Conceptos</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+                <!-- Project 1 -->
+                <div class="gsap-card portfolio-card glass rounded-2xl overflow-hidden border border-white/5 group">
+                    <div
+                        class="relative h-64 lg:h-72 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+                        <div class="absolute inset-0 p-6">
+                            <div
+                                class="w-full h-full rounded-xl border border-cyan-500/10 bg-noir/60 p-4 overflow-hidden">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="w-2 h-2 rounded-full bg-red-400/60"></div>
+                                    <div class="w-2 h-2 rounded-full bg-yellow-400/60"></div>
+                                    <div class="w-2 h-2 rounded-full bg-green-400/60"></div>
+                                </div>
+                                <div class="grid grid-cols-4 gap-2 mb-3">
+                                    <div class="col-span-3 h-3 bg-cyan-500/15 rounded-full"></div>
+                                    <div class="h-3 bg-emerald-500/15 rounded-full"></div>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 mb-3">
+                                    <div class="h-16 bg-cyan-500/10 rounded-lg border border-cyan-500/10"></div>
+                                    <div class="h-16 bg-emerald-500/10 rounded-lg border border-emerald-500/10"></div>
+                                    <div class="h-16 bg-white/5 rounded-lg border border-white/5"></div>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <div class="h-1 bg-white/10 rounded-full w-full"></div>
+                                    <div class="h-1 bg-white/10 rounded-full w-2/3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-60">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-cyan-400/30 group-hover:bg-cyan-400/60 transition-all duration-500">
+                        </div>
+                    </div>
+                    <div class="p-6 lg:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3
+                                class="text-lg font-display font-bold text-white/90 group-hover:text-white transition-colors">
+                                Burger &amp; Co.</h3>
+                            <span
+                                class="text-[10px] font-mono text-cyan-400/70 uppercase tracking-wider px-2 py-1 rounded-full border border-cyan-500/20 bg-cyan-500/5"
+                                data-translate="project_1_tag">Concepto
+                                / Restaurante</span>
+                        </div>
+                        <p class="text-white/40 text-sm" data-translate="project_1_desc">Maqueta interactiva de
+                            men&uacute; digital para negocios de
+                            comida.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="gsap-card portfolio-card glass rounded-2xl overflow-hidden border border-white/5 group">
+                    <div
+                        class="relative h-64 lg:h-72 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 overflow-hidden">
+                        <div class="absolute inset-0 p-6">
+                            <div
+                                class="w-full h-full rounded-xl border border-emerald-500/10 bg-noir/60 p-4 overflow-hidden">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-16 h-1 bg-white/10 rounded-full"></div>
+                                    <div class="flex gap-1.5">
+                                        <div class="w-6 h-6 rounded-full bg-white/5"></div>
+                                        <div class="w-6 h-6 rounded-full bg-white/5"></div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3 mb-3">
+                                    <div
+                                        class="h-20 bg-emerald-500/10 rounded-lg border border-emerald-500/10 flex items-center justify-center">
+                                        <div class="w-8 h-8 rounded-lg bg-emerald-500/20"></div>
+                                    </div>
+                                    <div
+                                        class="h-20 bg-white/5 rounded-lg border border-white/5 flex items-center justify-center">
+                                        <div class="w-8 h-8 rounded-lg bg-white/10"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <div class="h-1 bg-white/10 rounded-full w-full"></div>
+                                    <div class="h-1 bg-white/10 rounded-full w-4/5"></div>
+                                    <div class="h-1 bg-white/10 rounded-full w-1/2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-60">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-emerald-400/30 group-hover:bg-emerald-400/60 transition-all duration-500">
+                        </div>
+                    </div>
+                    <div class="p-6 lg:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3
+                                class="text-lg font-display font-bold text-white/90 group-hover:text-white transition-colors">
+                                The Barbershop</h3>
+                            <span
+                                class="text-[10px] font-mono text-emerald-400/70 uppercase tracking-wider px-2 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5"
+                                data-translate="project_2_tag">Concepto
+                                / Barber&iacute;a</span>
+                        </div>
+                        <p class="text-white/40 text-sm" data-translate="project_2_desc">Plantilla web premium con
+                            interfaz para reserva de citas y
+                            servicios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <a href="#"
+                    class="btn-outline inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/10 text-sm font-semibold text-white/50 hover:text-white transition-all duration-300">
+                    <span data-translate="portfolio_cta">Ver M&aacute;s Conceptos</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION DIVIDER ===== -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ================================================================ -->
+    <!-- FAQ SECTION -->
+    <!-- ================================================================ -->
+    <section id="faq" class="relative py-32 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="mb-16 text-center">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="capability-line"></div>
+                    <span class="gsap-reveal text-xs font-mono text-cyan-400 uppercase tracking-[0.3em]" data-translate="faq_label">FAQ</span>
+                    <div class="capability-line rotate-180"></div>
+                </div>
+                <h2 class="gsap-reveal text-4xl lg:text-5xl font-display font-bold tracking-tight">
+                    <span data-translate="faq_title_1">Preguntas</span> <span class="gradient-text-cyan" data-translate="faq_title_2">Frecuentes</span>
+                </h2>
+            </div>
+
+            <!-- Accordion Container -->
+            <div class="space-y-4 max-w-3xl mx-auto relative z-10">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
+                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none" aria-expanded="false">
+                        <span class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                            <span class="font-mono text-xs text-cyan-400/50">01 //</span>
+                            <span data-translate="faq_q1">¿Cuánto tiempo toma diseñar y programar mi sitio web?</span>
+                        </span>
+                        <span class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden">
+                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed" data-translate="faq_a1">
+                            Dependiendo de la complejidad, una landing page optimizada suele estar lista en un plazo de 5 a 10 días hábiles.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
+                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none" aria-expanded="false">
+                        <span class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                            <span class="font-mono text-xs text-cyan-400/50">02 //</span>
+                            <span data-translate="faq_q2">¿La página web se adaptará a teléfonos celulares?</span>
+                        </span>
+                        <span class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden">
+                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed" data-translate="faq_a2">
+                            Sí, absolutamente. Cada línea de código está optimizada para que la interfaz sea 100% fluida en smartphones, tablets y computadoras.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
+                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none" aria-expanded="false">
+                        <span class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                            <span class="font-mono text-xs text-cyan-400/50">03 //</span>
+                            <span data-translate="faq_q3">¿Cómo se gestionan los pagos y el inicio del proyecto?</span>
+                        </span>
+                        <span class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
+                    </button>
+                    <div class="faq-content h-0 overflow-hidden">
+                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed" data-translate="faq_a3">
+                            Trabajamos con un esquema estructurado: una planificación inicial detallada y un anticipo para comenzar el desarrollo técnico.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION DIVIDER ===== -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ================================================================ -->
+    <!-- CONTACT FORM SECTION -->
+    <!-- ================================================================ -->
+    <section id="contact" class="relative py-32 overflow-hidden">
+        <div class="max-w-xl mx-auto px-6 lg:px-8">
+            <!-- CTA Header -->
+            <div class="gsap-reveal text-center mb-10">
+                <h3 class="text-3xl lg:text-5xl font-display font-bold tracking-tight mb-4">
+                    <span data-translate="contact_title_1">&iquest;Listo para</span> <span class="gradient-text-cyan"
+                        data-translate="contact_title_2">Empezar</span><span data-translate="contact_title_3">?</span>
+                </h3>
+                <p class="text-white/40 text-sm max-w-md mx-auto" data-translate="contact_subtitle">
+                    Cu&eacute;ntame sobre tu proyecto y construyamos juntos la presencia digital que tu negocio
+                    necesita.
+                </p>
+            </div>
+
+            <!-- Glassmorphic Contact Card -->
+            <div
+                class="gsap-card bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl shadow-cyan-500/5 relative overflow-hidden">
+                <!-- Background Glow -->
+                <div
+                    class="absolute top-0 right-0 w-[300px] h-[200px] bg-cyan-500/[0.05] rounded-full blur-[80px] pointer-events-none">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-[250px] h-[180px] bg-emerald-500/[0.04] rounded-full blur-[60px] pointer-events-none">
+                </div>
+
+                <!-- Form -->
+                <form id="contactForm" method="POST" action="https://formspree.io/f/mvzjodqz"
+                    class="relative z-10 space-y-5">
+                    <!-- Nombre -->
+                    <div>
+                        <label for="name" class="block text-slate-400 text-sm mb-1.5 font-medium"
+                            data-translate="form_name_label">Nombre</label>
+                        <input type="text" id="name" name="name" data-translate-placeholder="form_name_placeholder"
+                            placeholder="Tu nombre o negocio"
+                            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white w-full focus:outline-none focus:border-cyan-400 transition placeholder:text-white/20"
+                            required>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-slate-400 text-sm mb-1.5 font-medium"
+                            data-translate="form_email_label">Email</label>
+                        <input type="email" id="email" name="email" data-translate-placeholder="form_email_placeholder"
+                            placeholder="tu@correo.com"
+                            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white w-full focus:outline-none focus:border-cyan-400 transition placeholder:text-white/20"
+                            required>
+                    </div>
+
+                    <!-- Proyecto -->
+                    <div>
+                        <label for="message" class="block text-slate-400 text-sm mb-1.5 font-medium"
+                            data-translate="form_project_label">Proyecto</label>
+                        <textarea id="message" name="message" rows="4"
+                            data-translate-placeholder="form_project_placeholder"
+                            placeholder="Cu&eacute;ntame brevemente qu&eacute; tipo de p&aacute;gina web necesitas para tu negocio..."
+                            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white w-full focus:outline-none focus:border-cyan-400 transition placeholder:text-white/20 resize-none"
+                            required></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold py-3.5 rounded-xl transition-all duration-300 transform hover:scale-[1.02]">
+                        <span data-translate="form_submit">Enviar Propuesta</span>
+                    </button>
+                </form>
+
+                <!-- Success State -->
+                <div id="formSuccess" class="form-success relative z-10">
+                    <div
+                        class="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-2 mx-auto">
+                        <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-display font-bold text-white/90" data-translate="form_success_title">Mensaje
+                        Enviado</h4>
+                    <p class="text-white/40 text-sm" data-translate="form_success_desc">Gracias por contactarme. Te
+                        responder&eacute; pronto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- FOOTER -->
+    <!-- ================================================================ -->
+    <footer class="relative border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-mono text-white/20 tracking-wider">ANURDWEB // &copy; 2026</span>
+                    <span class="text-white/10">|</span>
+                    <span class="text-xs text-white/15 tracking-wide">BUILT FOR PERFORMANCE.</span>
+                </div>
+                <div class="flex items-center gap-5">
+                    <a href="https://www.instagram.com/soyanurdweb" target="_blank" rel="noopener noreferrer"
+                        class="text-white/20 hover:text-cyan-400 transition-colors duration-300" aria-label="Instagram">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="mailto:hola@anurweb.dev"
+                        class="text-white/20 hover:text-cyan-400 transition-colors duration-300" aria-label="Email">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================================================================ -->
+    <!-- SCRIPTS -->
+    <!-- ================================================================ -->
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+            (function () {
+                'use strict';
+
+                /* ===========================
+                   TRANSLATIONS
+                =========================== */
+                const translations = {
+                    es: {
+                        nav_work: 'Proyectos',
+                        nav_services: 'Servicios',
+                        nav_process: 'Proceso',
+                        nav_portfolio: 'Portafolio',
+                        nav_contact: 'Contacto',
+                        nav_cta: 'Cotizar Web',
+                        hero_badge: 'Disponible para nuevos proyectos',
+                        hero_title_1: 'Creando',
+                        hero_title_2: 'Experiencias',
+                        hero_title_3: 'Digitales.',
+                        hero_subtitle: 'Diseño y desarrollo de sitios web modernos, rápidos y optimizados. Ayudo a negocios locales a construir su primera presencia digital de alto impacto.',
+                        hero_cta: 'Ver Portafolio',
+                        services_label: 'Servicios',
+                        services_title_1: 'Lo Que',
+                        services_title_2: 'Construyo',
+                        service_1_desc: 'Transformación de páginas lentas u obsoletas en sitios rápidos, modernos y adaptados a cualquier pantalla.',
+                        service_2_desc: 'Creación de páginas de aterrizaje enfocadas en presentar un producto o servicio de forma atractiva para capturar clientes potenciales.',
+                        service_3_desc: 'Migración de negocios tradicionales al internet. Menús digitales, catálogos interactivos y enlaces directos a tu WhatsApp o redes.',
+                        process_label: 'El Proceso',
+                        process_title_1: 'De Idea a',
+                        process_title_2: 'Realidad',
+                        process_1_desc: 'Inmersión profunda en los requerimientos técnicos, posicionamiento de mercado y objetivos comerciales del negocio antes de tirar una sola línea de código.',
+                        process_2_desc: 'Selección del stack tecnológico ideal y modelado de la interfaz para garantizar tiempos de carga inferiores a un segundo y una ejecución impecable.',
+                        process_3_desc: 'Integración continua y lanzamiento optimizado en redes de borde globales, asegurando disponibilidad total y máxima fidelidad visual.',
+                        portfolio_label: 'Laboratorio de Conceptos',
+                        portfolio_title_1: 'Laboratorio de',
+                        portfolio_title_2: 'Conceptos',
+                        project_1_tag: 'Concepto / Restaurante',
+                        project_1_desc: 'Maqueta interactiva de menú digital para negocios de comida.',
+                        project_2_tag: 'Concepto / Barbería',
+                        project_2_desc: 'Plantilla web premium con interfaz para reserva de citas y servicios.',
+                        portfolio_cta: 'Ver Más Conceptos',
+                        contact_title_1: '¿Listo para',
+                        contact_title_2: 'Empezar',
+                        contact_title_3: '?',
+                        contact_subtitle: 'Cuéntame sobre tu proyecto y construyamos juntos la presencia digital que tu negocio necesita.',
+                        form_name_label: 'Nombre',
+                        form_name_placeholder: 'Tu nombre o negocio',
+                        form_email_label: 'Email',
+                        form_email_placeholder: 'tu@correo.com',
+                        form_project_label: 'Proyecto',
+                        form_project_placeholder: 'Cuéntame brevemente qué tipo de página web necesitas para tu negocio...',
+                        form_submit: 'Enviar Propuesta',
+                        form_success_title: 'Mensaje Enviado',
+                        form_success_desc: 'Gracias por contactarme. Te responderé pronto.',
+                        faq_label: 'FAQ',
+                        faq_title_1: 'Preguntas',
+                        faq_title_2: 'Frecuentes',
+                        faq_q1: '¿Cuánto tiempo toma diseñar y programar mi sitio web?',
+                        faq_a1: 'Dependiendo de la complejidad, una landing page optimizada suele estar lista en un plazo de 5 a 10 días hábiles.',
+                        faq_q2: '¿La página web se adaptará a teléfonos celulares?',
+                        faq_a2: 'Sí, absolutamente. Cada línea de código está optimizada para que la interfaz sea 100% fluida en smartphones, tablets y computadoras.',
+                        faq_q3: '¿Cómo se gestionan los pagos y el inicio del proyecto?',
+                        faq_a3: 'Trabajamos con un esquema estructurado: una planificación inicial detallada y un anticipo para comenzar el desarrollo técnico.'
+                    },
+                    en: {
+                        nav_work: 'Work',
+                        nav_services: 'Services',
+                        nav_process: 'Process',
+                        nav_portfolio: 'Portfolio',
+                        nav_contact: 'Contact',
+                        nav_cta: 'Get a Quote',
+                        hero_badge: 'Available for new projects',
+                        hero_title_1: 'Crafting',
+                        hero_title_2: 'Digital',
+                        hero_title_3: 'Experiences.',
+                        hero_subtitle: 'Design and development of modern, fast and optimized websites. I help local businesses build their first high-impact digital presence.',
+                        hero_cta: 'View Portfolio',
+                        services_label: 'Services',
+                        services_title_1: 'What I',
+                        services_title_2: 'Build',
+                        service_1_desc: 'Transformation of slow or outdated pages into fast, modern sites adapted to any screen.',
+                        service_2_desc: 'Creation of landing pages focused on presenting a product or service attractively to capture potential clients.',
+                        service_3_desc: 'Migration of traditional businesses to the internet. Digital menus, interactive catalogs and direct links to your WhatsApp or social media.',
+                        process_label: 'The Process',
+                        process_title_1: 'From Idea to',
+                        process_title_2: 'Reality',
+                        process_1_desc: 'Deep immersion in technical requirements, market positioning and business objectives before writing a single line of code.',
+                        process_2_desc: 'Selection of the ideal tech stack and interface modeling to guarantee sub-second load times and flawless execution.',
+                        process_3_desc: 'Continuous integration and optimized deployment on global edge networks, ensuring total availability and maximum visual fidelity.',
+                        portfolio_label: 'Concept Lab',
+                        portfolio_title_1: 'Concept',
+                        portfolio_title_2: 'Lab',
+                        project_1_tag: 'Concept / Restaurant',
+                        project_1_desc: 'Interactive digital menu mockup for food businesses.',
+                        project_2_tag: 'Concept / Barbershop',
+                        project_2_desc: 'Premium web template with appointment booking and services interface.',
+                        portfolio_cta: 'View More Concepts',
+                        contact_title_1: 'Ready to',
+                        contact_title_2: 'Start',
+                        contact_title_3: '?',
+                        contact_subtitle: 'Tell me about your project and let\'s build together the digital presence your business needs.',
+                        form_name_label: 'Name',
+                        form_name_placeholder: 'Your name or business',
+                        form_email_label: 'Email',
+                        form_email_placeholder: 'you@email.com',
+                        form_project_label: 'Project',
+                        form_project_placeholder: 'Briefly tell me what type of website your business needs...',
+                        form_submit: 'Send Proposal',
+                        form_success_title: 'Message Sent',
+                        form_success_desc: 'Thank you for reaching out. I\'ll get back to you soon.',
+                        faq_label: 'FAQ',
+                        faq_title_1: 'Frequently Asked',
+                        faq_title_2: 'Questions',
+                        faq_q1: 'How long does it take to design and code my website?',
+                        faq_a1: 'Depending on complexity, an optimized landing page is usually ready within 5 to 10 business days.',
+                        faq_q2: 'Will the website adapt to mobile phones?',
+                        faq_a2: 'Yes, absolutely. Every line of code is optimized so that the interface is 100% fluid on smartphones, tablets, and computers.',
+                        faq_q3: 'How are payments and project kickoff managed?',
+                        faq_a3: 'We work with a structured model: a detailed initial planning and a deposit to begin technical development.'
+                    }
+                };
+
+                let currentLang = localStorage.getItem('anurdweb_lang') || 'es';
+
+                function setLanguage(lang) {
+                    currentLang = lang;
+                    localStorage.setItem('anurdweb_lang', lang);
+
+                    // Update text content
+                    document.querySelectorAll('[data-translate]').forEach(el => {
+                        const key = el.getAttribute('data-translate');
+                        if (translations[lang][key]) {
+                            el.textContent = translations[lang][key];
+                        }
+                    });
+
+                    // Update placeholders
+                    document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
+                        const key = el.getAttribute('data-translate-placeholder');
+                        if (translations[lang][key]) {
+                            el.placeholder = translations[lang][key];
+                        }
+                    });
+
+                    // Update toggle button text
+                    document.getElementById('langText').textContent = lang === 'es' ? 'EN' : 'ES';
+
+                    // Update html lang attribute
+                    document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+                }
+
+                // Initialize language from localStorage
+                setLanguage(currentLang);
+
+                // Language toggle event
+                document.getElementById('langToggle').addEventListener('click', () => {
+                    setLanguage(currentLang === 'es' ? 'en' : 'es');
+                });
+
+                /* ===========================
+                   LOADING SCREEN
+                =========================== */
+                const loader = document.getElementById('loader');
+                const loaderPercent = loader.querySelector('.loader-percent');
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.floor(Math.random() * 15) + 5;
+                    if (progress >= 100) {
+                        progress = 100;
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            loader.classList.add('loaded');
+                            document.body.classList.remove('loading');
+                            initGSAP();
+                        }, 400);
+                    }
+                    loaderPercent.textContent = progress + '%';
+                }, 150);
+                document.body.classList.add('loading');
+
+                /* ===========================
+                   HAMBURGER / MOBILE MENU
+                =========================== */
+                const hamburgerBtn = document.getElementById('hamburgerBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+
+                function toggleMenu() {
+                    hamburgerBtn.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburgerBtn.addEventListener('click', toggleMenu);
+                hamburgerBtn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mobileMenu.classList.contains('open')) toggleMenu();
+                    });
+                });
+
+                /* ===========================
+                   NAVBAR SCROLL EFFECT
+                =========================== */
+                const navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', () => {
+                    navbar.classList.toggle('scrolled', window.scrollY > 50);
+                }, { passive: true });
+
+                /* ===========================
+                   CONTACT FORM
+                =========================== */
+                const contactForm = document.getElementById('contactForm');
+                const formSuccess = document.getElementById('formSuccess');
+
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.textContent = 'Enviando...';
+                    submitBtn.disabled = true;
+
+                    try {
+                        const formData = new FormData(contactForm);
+                        const response = await fetch(contactForm.action, {
+                            method: contactForm.method,
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            contactForm.reset();
+                            contactForm.style.transition = 'opacity 0.5s ease';
+                            contactForm.style.opacity = '0';
+
+                            setTimeout(() => {
+                                contactForm.style.display = 'none';
+                                formSuccess.classList.add('show');
+                            }, 500);
+                        } else {
+                            showErrorToast();
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.disabled = false;
+                        }
+                    } catch (error) {
+                        showErrorToast();
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    }
+                });
+
+                function showErrorToast() {
+                    const errorToast = document.createElement('div');
+                    errorToast.textContent = 'Hubo un problema al enviar. Por favor, inténtalo de nuevo.';
+                    errorToast.className = 'fixed bottom-5 right-5 bg-red-500/90 text-white px-6 py-3 rounded-xl shadow-lg shadow-red-500/20 backdrop-blur-md z-[100] transform transition-all duration-300 translate-y-10 opacity-0 font-medium text-sm border border-red-500/50';
+                    document.body.appendChild(errorToast);
+
+                    setTimeout(() => errorToast.classList.remove('translate-y-10', 'opacity-0'), 10);
+
+                    setTimeout(() => {
+                        errorToast.classList.add('translate-y-10', 'opacity-0');
+                        setTimeout(() => errorToast.remove(), 300);
+                    }, 4000);
+                }
+
+                /* ===========================
+                   FAQ ACCORDION
+                =========================== */
+                document.querySelectorAll('.faq-trigger').forEach(trigger => {
+                    trigger.addEventListener('click', () => {
+                        const parent = trigger.parentElement;
+                        const content = parent.querySelector('.faq-content');
+                        const icon = trigger.querySelector('.faq-icon');
+                        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+                        
+                        document.querySelectorAll('.faq-trigger').forEach(otherTrigger => {
+                            if (otherTrigger !== trigger) {
+                                otherTrigger.setAttribute('aria-expanded', 'false');
+                                const otherContent = otherTrigger.parentElement.querySelector('.faq-content');
+                                const otherIcon = otherTrigger.querySelector('.faq-icon');
+                                gsap.to(otherContent, { height: 0, duration: 0.3, ease: 'power2.out' });
+                                gsap.to(otherIcon, { rotation: 0, duration: 0.3 });
+                                otherTrigger.parentElement.classList.remove('border-cyan-500/30');
+                            }
+                        });
+
+                        if (isOpen) {
+                            trigger.setAttribute('aria-expanded', 'false');
+                            gsap.to(content, { height: 0, duration: 0.3, ease: 'power2.out' });
+                            gsap.to(icon, { rotation: 0, duration: 0.3 });
+                            parent.classList.remove('border-cyan-500/30');
+                        } else {
+                            trigger.setAttribute('aria-expanded', 'true');
+                            gsap.killTweensOf(content);
+                            gsap.fromTo(content, 
+                                { height: 0 },
+                                { height: 'auto', duration: 0.4, ease: 'power2.out' }
+                            );
+                            gsap.to(icon, { rotation: 45, duration: 0.3 });
+                            parent.classList.add('border-cyan-500/30');
+                        }
+                    });
+                });
+
+                /* ===========================
+                   GSAP ANIMATIONS
+                =========================== */
+                function initGSAP() {
+                    gsap.registerPlugin(ScrollTrigger);
+
+                    // Hero badge + title
+                    gsap.fromTo('#work .gsap-reveal',
+                        { y: 50, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#work', start: 'top 85%' },
+                            y: 0, opacity: 1, duration: 0.8, stagger: 0.12,
+                            ease: 'power3.out', clearProps: 'all'
+                        }
+                    );
+
+                    // Floating device entrance
+                    gsap.fromTo('.float-device',
+                        { x: 100, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#work', start: 'top 85%' },
+                            x: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.3,
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Capabilities section header
+                    gsap.fromTo('#services .gsap-reveal',
+                        { y: 40, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#services', start: 'top 90%' },
+                            y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Capabilities cards
+                    gsap.fromTo('#services .gsap-card',
+                        { x: -60, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#services .space-y-6', start: 'top 90%' },
+                            x: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Method section header
+                    gsap.fromTo('#process .gsap-reveal',
+                        { y: 40, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#process', start: 'top 90%' },
+                            y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Method cards
+                    gsap.fromTo('#process .gsap-card',
+                        { y: 60, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#process .grid', start: 'top 90%' },
+                            y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Method numbers rotation
+                    document.querySelectorAll('.method-number').forEach(num => {
+                        gsap.to(num, {
+                            scrollTrigger: { trigger: num.closest('.gsap-card'), start: 'top 90%', end: 'bottom 20%', scrub: 1 },
+                            rotation: 15, ease: 'none'
+                        });
+                    });
+
+                    // Portfolio section header
+                    gsap.fromTo('#portfolio .gsap-reveal',
+                        { y: 40, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#portfolio', start: 'top 90%' },
+                            y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Portfolio cards
+                    gsap.fromTo('#portfolio .gsap-card',
+                        { scale: 0.95, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#portfolio .grid', start: 'top 90%' },
+                            scale: 1, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Portfolio cards parallax
+                    document.querySelectorAll('#portfolio .portfolio-card').forEach((card, i) => {
+                        gsap.to(card, {
+                            scrollTrigger: {
+                                trigger: card,
+                                start: 'top bottom',
+                                end: 'bottom top',
+                                scrub: 1
+                            },
+                            y: (i === 0 ? -40 : -60),
+                            ease: 'none'
+                        });
+                    });
+
+                    // FAQ section header
+                    gsap.fromTo('#faq .gsap-reveal',
+                        { y: 40, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#faq', start: 'top 90%' },
+                            y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // FAQ items entrance
+                    gsap.fromTo('#faq .faq-item',
+                        { y: 30, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#faq .space-y-4', start: 'top 90%' },
+                            y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Contact form header
+                    gsap.fromTo('#contact .gsap-reveal',
+                        { y: 50, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#contact', start: 'top 90%' },
+                            y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Contact form card
+                    gsap.fromTo('#contact .gsap-card',
+                        { y: 60, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: '#contact .gsap-card', start: 'top 92%' },
+                            y: 0, opacity: 1, duration: 1, ease: 'power3.out',
+                            clearProps: 'all'
+                        }
+                    );
+
+                    // Parallax on blobs
+                    gsap.to('#blob1', {
+                        scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 2 },
+                        y: -300, ease: 'none'
+                    });
+                    gsap.to('#blob2', {
+                        scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 3 },
+                        y: -200, x: -100, ease: 'none'
+                    });
+                    gsap.to('#blob3', {
+                        scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 2.5 },
+                        y: -250, x: 80, ease: 'none'
+                    });
+
+                    // Floating ambient spheres animation
+                    gsap.to('#ambient-cyan', {
+                        x: '+=50', y: '+=30', duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut'
+                    });
+                    gsap.to('#ambient-blue', {
+                        x: '-=60', y: '+=40', duration: 10, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1
+                    });
+                    gsap.to('#ambient-purple', {
+                        x: '+=40', y: '-=50', duration: 9, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.5
+                    });
+                }
+
+            })();
+    </script>
+
+</body>
+
+</html>
