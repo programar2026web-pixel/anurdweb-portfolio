@@ -90,8 +90,17 @@
         <a href="#portfolio" class="mobile-link" data-translate="nav_portfolio">Portfolio</a>
         <a href="#contact"
             class="mobile-link mt-4 inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-noir text-base font-bold !text-noir"
-            data-translate="nav_cta">Cotizar
-            Web</a>
+            data-translate="nav_cta">Cotizar Web</a>
+        <!-- Language Toggle Mobile -->
+        <button id="langToggleMobile"
+            class="mobile-link mt-6 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-mono text-white/50 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-300 cursor-pointer"
+            aria-label="Toggle language">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.568.422-3.037 1.157-4.29" />
+            </svg>
+            <span id="langTextMobile">EN</span>
+        </button>
     </div>
 
     <!-- ===== FLOATING BACKGROUND BLOBS ===== -->
@@ -116,7 +125,7 @@
     <!-- NAVBAR -->
     <!-- ================================================================ -->
     <header class="nav-glass fixed top-0 left-0 right-0 z-50" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Logo -->
             <a href="#" class="text-xl font-display font-bold tracking-tight">
                 <span class="gradient-text-mixed">AnurD</span><span class="text-white/80">web</span>
@@ -166,7 +175,7 @@
     <!-- ================================================================ -->
     <section id="work" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
         <div
-            class="max-w-7xl mx-auto px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
 
             <!-- Left Content -->
             <div class="relative z-10">
@@ -211,12 +220,12 @@
             </div>
 
             <!-- Right: Floating Device -->
-            <div class="relative flex items-center justify-center lg:justify-end h-[400px] lg:h-[600px]">
+            <div class="relative flex items-center justify-center lg:justify-end h-[350px] sm:h-[400px] lg:h-[600px]">
                 <!-- Glow Background -->
-                <div class="absolute w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[100px]"></div>
+                <div class="absolute w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] bg-cyan-500/10 rounded-full blur-[100px]"></div>
 
                 <!-- Device Container -->
-                <div class="float-device relative w-[280px] h-[380px] lg:w-[320px] lg:h-[440px]">
+                <div class="float-device relative w-[240px] h-[330px] sm:w-[280px] sm:h-[380px] lg:w-[320px] lg:h-[440px]">
                     <!-- Outer Glass Frame -->
                     <div class="absolute inset-0 rounded-3xl glass-strong border border-cyan-500/20 pulse-glow"></div>
 
@@ -282,8 +291,8 @@
     <!-- ================================================================ -->
     <!-- CAPABILITIES SECTION -->
     <!-- ================================================================ -->
-    <section id="services" class="relative py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="services" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-20">
                 <div class="flex items-center gap-4 mb-4">
                     <div class="capability-line"></div>
@@ -299,7 +308,7 @@
             <div class="space-y-6">
                 <!-- Card 1 -->
                 <div
-                    class="gsap-card glass rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default card-glow">
+                    class="gsap-card glass rounded-2xl p-5 sm:p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default card-glow">
                     <div class="flex-shrink-0">
                         <span class="font-mono text-xs text-white/20 tracking-wider">01 //</span>
                         <h3
@@ -326,7 +335,7 @@
 
                 <!-- Card 2 -->
                 <div
-                    class="gsap-card glass rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default lg:ml-12 card-glow">
+                    class="gsap-card glass rounded-2xl p-5 sm:p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default lg:ml-12 card-glow">
                     <div class="flex-shrink-0">
                         <span class="font-mono text-xs text-white/20 tracking-wider">02 //</span>
                         <h3
@@ -353,7 +362,7 @@
 
                 <!-- Card 3 -->
                 <div
-                    class="gsap-card glass rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default lg:ml-24 card-glow">
+                    class="gsap-card glass rounded-2xl p-5 sm:p-8 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start border border-white/5 group cursor-default lg:ml-24 card-glow">
                     <div class="flex-shrink-0">
                         <span class="font-mono text-xs text-white/20 tracking-wider">03 //</span>
                         <h3
@@ -386,8 +395,8 @@
     <!-- ================================================================ -->
     <!-- THE METHOD SECTION -->
     <!-- ================================================================ -->
-    <section id="process" class="relative py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="process" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-20">
                 <div class="flex items-center gap-4 mb-4">
                     <div class="capability-line"></div>
@@ -404,7 +413,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                 <!-- Card 1 -->
                 <div
-                    class="gsap-card relative glass rounded-2xl p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
+                    class="gsap-card relative glass rounded-2xl p-5 sm:p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
                     <div class="method-number">01</div>
                     <div class="relative z-10">
                         <span class="inline-block font-mono text-xs text-cyan-400/50 tracking-wider mb-4">01</span>
@@ -420,7 +429,7 @@
 
                 <!-- Card 2 -->
                 <div
-                    class="gsap-card relative glass rounded-2xl p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
+                    class="gsap-card relative glass rounded-2xl p-5 sm:p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
                     <div class="method-number">02</div>
                     <div class="relative z-10">
                         <span class="inline-block font-mono text-xs text-cyan-400/50 tracking-wider mb-4">02</span>
@@ -436,7 +445,7 @@
 
                 <!-- Card 3 -->
                 <div
-                    class="gsap-card relative glass rounded-2xl p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
+                    class="gsap-card relative glass rounded-2xl p-5 sm:p-8 lg:p-10 border border-white/5 overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
                     <div class="method-number">03</div>
                     <div class="relative z-10">
                         <span class="inline-block font-mono text-xs text-cyan-400/50 tracking-wider mb-4">03</span>
@@ -462,7 +471,7 @@
         </div>
         <div class="marquee-container flex whitespace-nowrap overflow-hidden select-none">
             <div
-                class="marquee-content flex gap-8 shrink-0 min-w-full text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4">
+                class="marquee-content flex gap-8 shrink-0 min-w-full text-3xl sm:text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4">
                 <span
                     class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">HTML5</span>
                 <span class="text-white/20">//</span>
@@ -487,7 +496,7 @@
                     DESIGN</span>
                 <span class="text-white/20">//</span>
             </div>
-            <div class="marquee-content flex gap-8 shrink-0 min-w-full text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4"
+            <div class="marquee-content flex gap-8 shrink-0 min-w-full text-3xl sm:text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4"
                 aria-hidden="true">
                 <span
                     class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">HTML5</span>
@@ -522,8 +531,8 @@
     <!-- ================================================================ -->
     <!-- SELECTED ARCHIVES (PORTFOLIO) -->
     <!-- ================================================================ -->
-    <section id="portfolio" class="relative py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="portfolio" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-20">
                 <div class="flex items-center gap-4 mb-4">
                     <div class="capability-line"></div>
@@ -541,8 +550,8 @@
                 <!-- Project 1 -->
                 <div class="gsap-card portfolio-card glass rounded-2xl overflow-hidden border border-white/5 group">
                     <div
-                        class="relative h-64 lg:h-72 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-                        <div class="absolute inset-0 p-6">
+                        class="relative h-56 sm:h-64 lg:h-72 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+                        <div class="absolute inset-0 p-4 sm:p-6">
                             <div
                                 class="w-full h-full rounded-xl border border-cyan-500/10 bg-noir/60 p-4 overflow-hidden">
                                 <div class="flex items-center gap-2 mb-4">
@@ -572,7 +581,7 @@
                             class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-cyan-400/30 group-hover:bg-cyan-400/60 transition-all duration-500">
                         </div>
                     </div>
-                    <div class="p-6 lg:p-8">
+                    <div class="p-5 sm:p-6 lg:p-8">
                         <div class="flex items-center justify-between mb-3">
                             <h3
                                 class="text-lg font-display font-bold text-white/90 group-hover:text-white transition-colors">
@@ -591,8 +600,8 @@
                 <!-- Project 2 -->
                 <div class="gsap-card portfolio-card glass rounded-2xl overflow-hidden border border-white/5 group">
                     <div
-                        class="relative h-64 lg:h-72 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 overflow-hidden">
-                        <div class="absolute inset-0 p-6">
+                        class="relative h-56 sm:h-64 lg:h-72 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 overflow-hidden">
+                        <div class="absolute inset-0 p-4 sm:p-6">
                             <div
                                 class="w-full h-full rounded-xl border border-emerald-500/10 bg-noir/60 p-4 overflow-hidden">
                                 <div class="flex items-center justify-between mb-4">
@@ -626,7 +635,7 @@
                             class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-emerald-400/30 group-hover:bg-emerald-400/60 transition-all duration-500">
                         </div>
                     </div>
-                    <div class="p-6 lg:p-8">
+                    <div class="p-5 sm:p-6 lg:p-8">
                         <div class="flex items-center justify-between mb-3">
                             <h3
                                 class="text-lg font-display font-bold text-white/90 group-hover:text-white transition-colors">
@@ -661,8 +670,8 @@
     <!-- ================================================================ -->
     <!-- FAQ SECTION -->
     <!-- ================================================================ -->
-    <section id="faq" class="relative py-32 overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <section id="faq" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-16 text-center">
                 <div class="flex items-center justify-center gap-4 mb-4">
                     <div class="capability-line"></div>
@@ -682,10 +691,10 @@
                 <div
                     class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
                     <button
-                        class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none"
+                        class="faq-trigger w-full flex items-center justify-between p-4 sm:p-6 text-left cursor-pointer focus:outline-none"
                         aria-expanded="false">
                         <span
-                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-start gap-3 pt-0.5">
                             <span class="font-mono text-xs text-cyan-400/50">01 //</span>
                             <span data-translate="faq_q1">¿Cuánto tiempo toma diseñar y programar mi sitio web?</span>
                         </span>
@@ -705,10 +714,10 @@
                 <div
                     class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
                     <button
-                        class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none"
+                        class="faq-trigger w-full flex items-center justify-between p-4 sm:p-6 text-left cursor-pointer focus:outline-none"
                         aria-expanded="false">
                         <span
-                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-start gap-3 pt-0.5">
                             <span class="font-mono text-xs text-cyan-400/50">02 //</span>
                             <span data-translate="faq_q2">¿La página web se adaptará a teléfonos celulares?</span>
                         </span>
@@ -728,10 +737,10 @@
                 <div
                     class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
                     <button
-                        class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none"
+                        class="faq-trigger w-full flex items-center justify-between p-4 sm:p-6 text-left cursor-pointer focus:outline-none"
                         aria-expanded="false">
                         <span
-                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-start gap-3 pt-0.5">
                             <span class="font-mono text-xs text-cyan-400/50">03 //</span>
                             <span data-translate="faq_q3">¿Cómo se gestionan los pagos y el inicio del proyecto?</span>
                         </span>
@@ -756,8 +765,8 @@
     <!-- ================================================================ -->
     <!-- CONTACT FORM SECTION -->
     <!-- ================================================================ -->
-    <section id="contact" class="relative py-32 overflow-hidden">
-        <div class="max-w-xl mx-auto px-6 lg:px-8">
+    <section id="contact" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- CTA Header -->
             <div class="gsap-reveal text-center mb-10">
                 <h3 class="text-3xl lg:text-5xl font-display font-bold tracking-tight mb-4">
@@ -772,7 +781,7 @@
 
             <!-- Glassmorphic Contact Card -->
             <div
-                class="gsap-card bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl shadow-cyan-500/5 relative overflow-hidden">
+                class="gsap-card bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-2xl p-5 sm:p-8 shadow-2xl shadow-cyan-500/5 relative overflow-hidden">
                 <!-- Background Glow -->
                 <div
                     class="absolute top-0 right-0 w-[300px] h-[200px] bg-cyan-500/[0.05] rounded-full blur-[80px] pointer-events-none">
@@ -843,11 +852,11 @@
     <!-- FOOTER -->
     <!-- ================================================================ -->
     <footer class="relative border-t border-white/5 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex items-center gap-3">
+                <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-3">
                     <span class="text-xs font-mono text-white/20 tracking-wider">ANURDWEB // &copy; 2026</span>
-                    <span class="text-white/10">|</span>
+                    <span class="text-white/10 hidden sm:inline">|</span>
                     <span class="text-xs text-white/15 tracking-wide">BUILT FOR PERFORMANCE.</span>
                 </div>
                 <div class="flex items-center gap-5">
@@ -1027,6 +1036,10 @@
 
                     // Update toggle button text
                     document.getElementById('langText').textContent = lang === 'es' ? 'EN' : 'ES';
+                    const langTextMobile = document.getElementById('langTextMobile');
+                    if (langTextMobile) {
+                        langTextMobile.textContent = lang === 'es' ? 'EN' : 'ES';
+                    }
 
                     // Update html lang attribute
                     document.documentElement.lang = lang === 'es' ? 'es' : 'en';
@@ -1039,6 +1052,12 @@
                 document.getElementById('langToggle').addEventListener('click', () => {
                     setLanguage(currentLang === 'es' ? 'en' : 'es');
                 });
+                const langToggleMobile = document.getElementById('langToggleMobile');
+                if (langToggleMobile) {
+                    langToggleMobile.addEventListener('click', () => {
+                        setLanguage(currentLang === 'es' ? 'en' : 'es');
+                    });
+                }
 
                 /* ===========================
                    LOADING SCREEN
