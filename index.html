@@ -3,11 +3,14 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KV8DN9W');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KV8DN9W');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,12 +43,19 @@
     <style>
         /* ===== MARQUEE ANIMATION ===== */
         @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
+
         .marquee-content {
             animation: marquee 25s linear infinite;
         }
+
         .marquee-container:hover .marquee-content {
             animation-play-state: paused;
         }
@@ -55,8 +65,8 @@
 
 <body class="bg-[#0A0A0A] text-white relative">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV8DN9W"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV8DN9W" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- ================================================================ -->
@@ -95,9 +105,12 @@
     <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
 
     <!-- ===== GIANT AMBIENT LIGHT SPHERES ===== -->
-    <div class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] absolute top-[25%] left-[-15%] pointer-events-none z-0" id="ambient-cyan"></div>
-    <div class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] absolute top-[55%] right-[-20%] pointer-events-none z-0" id="ambient-blue"></div>
-    <div class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] absolute top-[80%] left-[10%] pointer-events-none z-0" id="ambient-purple"></div>
+    <div class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] absolute top-[25%] left-[-15%] pointer-events-none z-0"
+        id="ambient-cyan"></div>
+    <div class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] absolute top-[55%] right-[-20%] pointer-events-none z-0"
+        id="ambient-blue"></div>
+    <div class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] absolute top-[80%] left-[10%] pointer-events-none z-0"
+        id="ambient-purple"></div>
 
     <!-- ================================================================ -->
     <!-- NAVBAR -->
@@ -444,34 +457,60 @@
     <!-- TECH STACK MARQUEE SECTION -->
     <!-- ================================================================ -->
     <section class="relative py-12 overflow-hidden bg-[#111111]/30 border-y border-white/5 z-10">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-transparent to-[#0A0A0A] pointer-events-none z-20"></div>
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-transparent to-[#0A0A0A] pointer-events-none z-20">
+        </div>
         <div class="marquee-container flex whitespace-nowrap overflow-hidden select-none">
-            <div class="marquee-content flex gap-8 shrink-0 min-w-full text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4">
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">HTML5</span>
+            <div
+                class="marquee-content flex gap-8 shrink-0 min-w-full text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4">
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">HTML5</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">TAILWIND CSS</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">TAILWIND
+                    CSS</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">JAVASCRIPT (ES6+)</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">JAVASCRIPT
+                    (ES6+)</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">GSAP ANIMATIONS</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">GSAP
+                    ANIMATIONS</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">GIT & GITHUB</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">GIT
+                    & GITHUB</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">RESPONSIVE DESIGN</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">RESPONSIVE
+                    DESIGN</span>
                 <span class="text-white/20">//</span>
             </div>
-            <div class="marquee-content flex gap-8 shrink-0 min-w-full text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4" aria-hidden="true">
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">HTML5</span>
+            <div class="marquee-content flex gap-8 shrink-0 min-w-full text-5xl md:text-7xl font-display font-black tracking-wider uppercase py-4"
+                aria-hidden="true">
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">HTML5</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">TAILWIND CSS</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">TAILWIND
+                    CSS</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">JAVASCRIPT (ES6+)</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">JAVASCRIPT
+                    (ES6+)</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">GSAP ANIMATIONS</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">GSAP
+                    ANIMATIONS</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">GIT & GITHUB</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-cyan-400 transition-colors duration-300">GIT
+                    & GITHUB</span>
                 <span class="text-white/20">//</span>
-                <span class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">RESPONSIVE DESIGN</span>
+                <span
+                    class="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] hover:text-emerald-400 transition-colors duration-300">RESPONSIVE
+                    DESIGN</span>
                 <span class="text-white/20">//</span>
             </div>
         </div>
@@ -627,60 +666,83 @@
             <div class="mb-16 text-center">
                 <div class="flex items-center justify-center gap-4 mb-4">
                     <div class="capability-line"></div>
-                    <span class="gsap-reveal text-xs font-mono text-cyan-400 uppercase tracking-[0.3em]" data-translate="faq_label">FAQ</span>
+                    <span class="gsap-reveal text-xs font-mono text-cyan-400 uppercase tracking-[0.3em]"
+                        data-translate="faq_label">FAQ</span>
                     <div class="capability-line rotate-180"></div>
                 </div>
                 <h2 class="gsap-reveal text-4xl lg:text-5xl font-display font-bold tracking-tight">
-                    <span data-translate="faq_title_1">Preguntas</span> <span class="gradient-text-cyan" data-translate="faq_title_2">Frecuentes</span>
+                    <span data-translate="faq_title_1">Preguntas</span> <span class="gradient-text-cyan"
+                        data-translate="faq_title_2">Frecuentes</span>
                 </h2>
             </div>
 
             <!-- Accordion Container -->
             <div class="space-y-4 max-w-3xl mx-auto relative z-10">
                 <!-- FAQ Item 1 -->
-                <div class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
-                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none" aria-expanded="false">
-                        <span class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                <div
+                    class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
+                    <button
+                        class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none"
+                        aria-expanded="false">
+                        <span
+                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
                             <span class="font-mono text-xs text-cyan-400/50">01 //</span>
                             <span data-translate="faq_q1">¿Cuánto tiempo toma diseñar y programar mi sitio web?</span>
                         </span>
-                        <span class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
+                        <span
+                            class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
                     </button>
                     <div class="faq-content h-0 overflow-hidden">
-                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed" data-translate="faq_a1">
-                            Dependiendo de la complejidad, una landing page optimizada suele estar lista en un plazo de 5 a 10 días hábiles.
+                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed"
+                            data-translate="faq_a1">
+                            Dependiendo de la complejidad, una landing page optimizada suele estar lista en un plazo de
+                            5 a 10 días hábiles.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
-                <div class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
-                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none" aria-expanded="false">
-                        <span class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                <div
+                    class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
+                    <button
+                        class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none"
+                        aria-expanded="false">
+                        <span
+                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
                             <span class="font-mono text-xs text-cyan-400/50">02 //</span>
                             <span data-translate="faq_q2">¿La página web se adaptará a teléfonos celulares?</span>
                         </span>
-                        <span class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
+                        <span
+                            class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
                     </button>
                     <div class="faq-content h-0 overflow-hidden">
-                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed" data-translate="faq_a2">
-                            Sí, absolutamente. Cada línea de código está optimizada para que la interfaz sea 100% fluida en smartphones, tablets y computadoras.
+                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed"
+                            data-translate="faq_a2">
+                            Sí, absolutamente. Cada línea de código está optimizada para que la interfaz sea 100% fluida
+                            en smartphones, tablets y computadoras.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
-                <div class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
-                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none" aria-expanded="false">
-                        <span class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
+                <div
+                    class="faq-item glass rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-cyan-500/20">
+                    <button
+                        class="faq-trigger w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none"
+                        aria-expanded="false">
+                        <span
+                            class="font-display font-bold text-base md:text-lg text-white/80 transition-colors duration-300 flex items-center gap-3">
                             <span class="font-mono text-xs text-cyan-400/50">03 //</span>
                             <span data-translate="faq_q3">¿Cómo se gestionan los pagos y el inicio del proyecto?</span>
                         </span>
-                        <span class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
+                        <span
+                            class="faq-icon text-cyan-400 transition-transform duration-300 text-xl font-light">+</span>
                     </button>
                     <div class="faq-content h-0 overflow-hidden">
-                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed" data-translate="faq_a3">
-                            Trabajamos con un esquema estructurado: una planificación inicial detallada y un anticipo para comenzar el desarrollo técnico.
+                        <div class="p-6 pt-0 text-sm md:text-base text-white/50 border-t border-white/5 leading-relaxed"
+                            data-translate="faq_a3">
+                            Trabajamos con un esquema estructurado: una planificación inicial detallada y un anticipo
+                            para comenzar el desarrollo técnico.
                         </div>
                     </div>
                 </div>
@@ -791,7 +853,8 @@
                 <div class="flex items-center gap-5">
                     <a href="https://www.instagram.com/soyanurdweb" target="_blank" rel="noopener noreferrer"
                         class="text-white/20 hover:text-cyan-400 transition-colors duration-300" aria-label="Instagram">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -799,8 +862,10 @@
                     </a>
                     <a href="mailto:hola@anurweb.dev"
                         class="text-white/20 hover:text-cyan-400 transition-colors duration-300" aria-label="Email">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                     </a>
@@ -1095,7 +1160,7 @@
                         const content = parent.querySelector('.faq-content');
                         const icon = trigger.querySelector('.faq-icon');
                         const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-                        
+
                         document.querySelectorAll('.faq-trigger').forEach(otherTrigger => {
                             if (otherTrigger !== trigger) {
                                 otherTrigger.setAttribute('aria-expanded', 'false');
@@ -1115,7 +1180,7 @@
                         } else {
                             trigger.setAttribute('aria-expanded', 'true');
                             gsap.killTweensOf(content);
-                            gsap.fromTo(content, 
+                            gsap.fromTo(content,
                                 { height: 0 },
                                 { height: 'auto', duration: 0.4, ease: 'power2.out' }
                             );
