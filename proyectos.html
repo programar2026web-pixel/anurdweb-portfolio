@@ -30,6 +30,7 @@
                         'noir-light': '#111111',
                         cyan: { 400: '#22D3EE', 500: '#06B6D4', 600: '#0891B2' },
                         emerald: { 400: '#34D399', 500: '#10B981', 600: '#059669' },
+                        accent: { 400: '#FB923C', 500: '#F97316', 600: '#EA580C' },
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -67,30 +68,73 @@
     <!-- ================================================================ -->
     <header class="nav-glass fixed top-0 left-0 right-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-display font-bold tracking-tight">
+            <!-- Logo -->
+            <a href="index.html" class="text-xl font-display font-bold tracking-tight nav-logo transition-all duration-300">
                 <span class="gradient-text-mixed">AnurD</span><span class="text-white/80">web</span>
             </a>
-            <div class="flex items-center gap-3">
-                <button id="langToggle"
-                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-white/50 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-300 cursor-pointer"
-                    aria-label="Toggle language">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.568.422-3.037 1.157-4.29" />
-                    </svg>
-                    <span id="langText">EN</span>
-                </button>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html"
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-white/50 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-300">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
-                    <span data-translate="nav_back">Volver al Inicio</span>
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Inicio</a>
+                <a href="sobre-mi.html"
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Sobre Mí</a>
+                <a href="proyectos.html"
+                    class="nav-link text-sm font-medium text-accent-400 transition-colors duration-300 relative">Proyectos</a>
+                <a href="index.html#contact"
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Contacto</a>
+            </nav>
+
+            <!-- CTA + Language Selector + Hamburger -->
+            <div class="flex items-center gap-3">
+                <!-- Selector de Idioma -->
+                <div id="langSelector"
+                    class="hidden md:inline-flex items-center gap-0 rounded-full border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:border-accent-500/30">
+                    <button id="langES"
+                        class="lang-option px-2.5 py-1.5 text-xs font-mono font-semibold transition-all duration-300 cursor-pointer"
+                        aria-label="Cambiar a español">ES</button>
+                    <span class="text-white/20 text-[10px] select-none">&rarr;</span>
+                    <button id="langEN"
+                        class="lang-option px-2.5 py-1.5 text-xs font-mono font-semibold transition-all duration-300 cursor-pointer"
+                        aria-label="Switch to English">EN</button>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="index.html#contact"
+                    class="hidden md:inline-flex btn-primary nav-cta bg-gradient-to-r from-accent-500 to-accent-600 text-noir px-5 py-2 rounded-full text-sm font-bold tracking-wide shadow-lg shadow-accent-500/20">
+                    Cotizar Web
                 </a>
+
+                <!-- Hamburger -->
+                <div class="hamburger" id="hamburgerBtn" aria-label="Menu" role="button" tabindex="0">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- ================================================================ -->
+    <!-- MOBILE MENU OVERLAY -->
+    <!-- ================================================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-link">Inicio</a>
+        <a href="sobre-mi.html" class="mobile-link">Sobre Mí</a>
+        <a href="proyectos.html" class="mobile-link" style="color: #F97316;">Proyectos</a>
+        <a href="index.html#contact"
+            class="mobile-link mt-4 inline-block px-8 py-3 rounded-full bg-gradient-to-r from-accent-500 to-accent-600 text-noir text-base font-bold !text-noir shadow-lg shadow-accent-500/20">
+            Cotizar Web</a>
+        <!-- Selector de Idioma - Mobile -->
+        <div id="langSelectorMobile"
+            class="mobile-link mt-6 inline-flex items-center gap-0 rounded-full border border-white/10 bg-white/5 overflow-hidden transition-all duration-300">
+            <button id="langESMobile"
+                class="lang-option-mobile px-4 py-2 text-sm font-mono font-semibold transition-all duration-300 cursor-pointer"
+                aria-label="Cambiar a español">ES</button>
+            <span class="text-white/20 text-xs select-none">&rarr;</span>
+            <button id="langENMobile"
+                class="lang-option-mobile px-4 py-2 text-sm font-mono font-semibold transition-all duration-300 cursor-pointer"
+                aria-label="Switch to English">EN</button>
+        </div>
+    </div>
 
     <!-- ================================================================ -->
     <!-- MAIN CONTENT -->
@@ -107,92 +151,227 @@
                 <p class="text-base sm:text-lg text-white/40 max-w-2xl font-light" data-translate="projects_subtitle">Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales que he construido.</p>
             </div>
 
-            <!-- CONTENEDOR DE PROYECTOS -->
-            <div class="space-y-24">
+            <!-- ===== GRID DE PROYECTOS MINIMALISTA ===== -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-                <!-- PROYECTO: BURGER & CO. -->
-                <article
-                    class="glass rounded-2xl overflow-hidden border border-white/5 shadow-xl shadow-cyan-500/5 flex flex-col lg:flex-row gap-8 p-6 sm:p-8">
-
-                    <!-- Columna Izquierda: Capturas Reales del Proyecto -->
-                    <div class="w-full lg:w-1/2 flex flex-col gap-4">
-                        <!-- Imagen Principal: El Hero de la tienda -->
-                        <div
-                            class="relative group overflow-hidden rounded-xl border border-white/5 bg-noir/60 aspect-video flex items-center justify-center">
-                            <img src="img/burguer-screen.png" alt="Burger & Co. Hero Landing"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                            <div
-                                class="absolute top-3 left-3 bg-amber-500/10 backdrop-blur-md border border-amber-500/30 px-3 py-1 rounded-full text-xs text-amber-400 font-mono font-medium">
-                                Landing Page - Hero</div>
-                        </div>
-
-                        <!-- Imagen Secundaria: La sección del Menú Premium -->
-                        <div
-                            class="relative rounded-xl overflow-hidden border border-white/5 bg-noir/60 aspect-video group">
-                            <img src="img/burguer-menu.png" alt="Burger & Co. Menu Grid"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                            <div
-                                class="absolute bottom-3 left-3 bg-noir/80 backdrop-blur-sm px-3 py-1 rounded-md text-xs text-white/40 font-mono">
-                                Sección de Productos</div>
-                        </div>
+                <!-- ===== TARJETA: BURGER & CO. ===== -->
+                <article class="project-card group glass rounded-2xl border border-white/5 hover:border-accent-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                    data-project="burger">
+                    <!-- Imagen -->
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="img/burguer-screen.png" alt="Burger & Co."
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent"></div>
+                        <!-- Badge -->
+                        <span class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-400">
+                            Landing Page
+                        </span>
                     </div>
-
-                    <!-- Columna Derecha: Especificaciones del Caso de Estudio -->
-                    <div class="w-full lg:w-1/2 flex flex-col justify-between space-y-6">
-                        <div>
-                            <!-- Título del Proyecto -->
-                            <h2
-                                class="text-2xl sm:text-3xl font-display font-bold text-white mb-3 tracking-tight">
-                                Burger & Co. <span class="text-amber-400" data-translate="project1_name">Artisanal Kitchen</span></h2>
-
-                            <!-- 1. PROPÓSITO DEL PROYECTO -->
-                            <div class="mb-4">
-                                <h3
-                                    class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 mb-1" data-translate="project1_purpose_label">
-                                    Propósito</h3>
-                                <p class="text-sm sm:text-base text-white/50 leading-relaxed" data-translate="project1_purpose">
-                                    Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una
-                                    interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del
-                                    contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes
-                                    directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio
-                                    local.
-                                </p>
-                            </div>
-
-                            <!-- 2. DESCRIPCIÓN -->
-                            <div class="mb-4">
-                                <h3
-                                    class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 mb-1" data-translate="project1_desc_label">
-                                    Descripción</h3>
-                                <p class="text-sm text-white/40 leading-relaxed" data-translate="project1_desc">
-                                    Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo,
-                                    utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante.
-                                    La página cuenta con una arquitectura optimizada para la carga ultrarrápida de
-                                    imágenes de comida en alta resolución, secciones de menú categorizadas con precios
-                                    dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado
-                                    con información de contacto directa.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Enlace de navegación -->
-                        <div class="pt-2">
-                                <span class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white/30 text-sm font-medium px-5 py-2.5 rounded-full cursor-default">
-                                <span data-translate="project1_cta">Próximamente</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </span>
-                        </div>
+                    <!-- Contenido -->
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/90 text-lg mb-1.5 tracking-tight">
+                            Burger & Co. <span class="text-accent-400">Artisanal Kitchen</span>
+                        </h3>
+                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4" data-translate="project1_short">
+                            Experiencia web gourmet con menú interactivo, diseño premium y flujo de órdenes directo.
+                        </p>
+                        <button type="button" class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
+                            data-translate="project_view">
+                            Ver Proyecto
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
                     </div>
                 </article>
 
-                <!-- Aquí puedes duplicar el bloque de arriba (<article>) para agregar más proyectos -->
+                <!-- ===== TARJETA: PRÓXIMAMENTE 1 ===== -->
+                <article class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
+                    <div class="relative overflow-hidden aspect-[16/10] bg-white/5 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/40 text-lg mb-1.5 tracking-tight">
+                            Próximamente
+                        </h3>
+                        <p class="text-sm text-white/20 leading-relaxed">
+                            Nuevo proyecto en desarrollo.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- ===== TARJETA: PRÓXIMAMENTE 2 ===== -->
+                <article class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
+                    <div class="relative overflow-hidden aspect-[16/10] bg-white/5 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/40 text-lg mb-1.5 tracking-tight">
+                            Próximamente
+                        </h3>
+                        <p class="text-sm text-white/20 leading-relaxed">
+                            Nuevo proyecto en desarrollo.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- ===== TARJETA: PRÓXIMAMENTE 3 ===== -->
+                <article class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
+                    <div class="relative overflow-hidden aspect-[16/10] bg-white/5 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/40 text-lg mb-1.5 tracking-tight">
+                            Próximamente
+                        </h3>
+                        <p class="text-sm text-white/20 leading-relaxed">
+                            Nuevo proyecto en desarrollo.
+                        </p>
+                    </div>
+                </article>
 
             </div>
         </div>
     </main>
+
+    <!-- ================================================================ -->
+    <!-- MODAL: DETALLES DEL PROYECTO -->
+    <!-- ================================================================ -->
+    <div id="projectModal" class="fixed inset-0 z-[100] hidden">
+        <!-- Overlay -->
+        <div id="modalOverlay" class="absolute inset-0 bg-noir/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+        
+        <!-- Panel Lateral -->
+        <div id="modalPanel" class="absolute right-0 top-0 h-full w-full sm:w-[520px] bg-noir-light border-l border-white/5 shadow-2xl transform translate-x-full transition-transform duration-400 ease-out">
+            
+            <!-- Header del Modal -->
+            <div class="sticky top-0 z-10 bg-noir-light/90 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-accent-500/10 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-xs font-mono text-white/60 uppercase tracking-wider" data-translate="modal_title">Detalles</span>
+                </div>
+                <button id="closeModal" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-200">
+                    <svg class="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Contenido del Modal (scrollable) -->
+            <div class="overflow-y-auto h-[calc(100vh-65px)] px-6 py-6">
+                <!-- Galería de Imágenes -->
+                <div class="flex flex-col gap-3 mb-6">
+                    <div class="relative rounded-xl overflow-hidden border border-white/5 bg-noir aspect-video">
+                        <img id="modalImg1" src="img/burguer-screen.png" alt="Proyecto screenshot"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden border border-white/5 bg-noir aspect-video">
+                        <img id="modalImg2" src="img/burguer-menu.png" alt="Proyecto screenshot"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Badge de Categoría -->
+                <span id="modalCategory" class="inline-block px-3 py-1.5 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-400 mb-4">
+                    Landing Page
+                </span>
+
+                <!-- Título del Proyecto -->
+                <h2 id="modalName" class="font-display font-bold text-white/90 text-2xl tracking-tight mb-5">
+                    Burger & Co. <span class="text-accent-400">Artisanal Kitchen</span>
+                </h2>
+
+                <!-- Propósito -->
+                <div class="mb-5">
+                    <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-accent-400 mb-2" data-translate="modal_purpose">
+                        Propósito
+                    </h3>
+                    <p id="modalPurpose" class="text-sm text-white/50 leading-relaxed">
+                        Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio local.
+                    </p>
+                </div>
+
+                <!-- Descripción -->
+                <div class="mb-6">
+                    <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-accent-400 mb-2" data-translate="modal_description">
+                        Descripción
+                    </h3>
+                    <p id="modalDescription" class="text-sm text-white/50 leading-relaxed">
+                        Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado con información de contacto directa.
+                    </p>
+                </div>
+
+                <!-- Características Clave -->
+                <div class="mb-8">
+                    <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-white/60 mb-3" data-translate="modal_features">
+                        Características Clave
+                    </h3>
+                    <ul id="modalFeatures" class="flex flex-col gap-2.5">
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="text-sm text-white/50">Diseño premium modo oscuro</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="text-sm text-white/50">Menú interactivo con precios dinámicos</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="text-sm text-white/50">Flujo de órdenes "Pide Ahora"</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="text-sm text-white/50">Imágenes optimizadas en alta resolución</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón Ver Proyecto (Próximamente) -->
+                <button id="modalDemoBtn" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white/40 font-bold text-sm tracking-wide hover:bg-white/10 hover:text-white/50 hover:border-white/20 transition-all duration-300 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    <span data-translate="modal_demo">Ver Proyecto</span>
+                    <span class="text-[10px] font-mono opacity-60">•</span>
+                    <span class="text-[10px] font-mono opacity-60" data-translate="modal_soon">Próximamente</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de Próximamente (fuera del modal) -->
+    <div id="soonToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] px-5 py-3 rounded-xl bg-noir-light border border-accent-500/20 shadow-xl shadow-accent-500/10 flex items-center gap-3 opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
+        <svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="text-sm text-white/70 font-medium" data-translate="toast_soon">Este proyecto estará disponible pronto</span>
+    </div>
 
     <!-- ================================================================ -->
     <!-- FOOTER -->
@@ -244,6 +423,30 @@
         (function () {
             'use strict';
 
+            // ===== DATOS DE PROYECTOS =====
+            const projectsData = {
+                burger: {
+                    img1: 'img/burguer-screen.png',
+                    img2: 'img/burguer-menu.png',
+                    category: { es: 'Landing Page', en: 'Landing Page' },
+                    name: 'Burger & Co. <span class="text-accent-400">Artisanal Kitchen</span>',
+                    purpose: {
+                        es: 'Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio local.',
+                        en: 'To digitize the experience of a gourmet burger restaurant through a high-end web interface. The main goal is to captivate the user through visual content, structure a fluid interactive menu, and simulate a direct ordering flow ("Order Now") focused on driving conversions and sales for the local business.'
+                    },
+                    description: {
+                        es: 'Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado con información de contacto directa.',
+                        en: 'Premium web design developed under a deep dark mode aesthetic, using orange and gold tones to accentuate the restaurant\'s branding. The page features an architecture optimized for ultra-fast loading of high-resolution food images, categorized menu sections with dynamic pricing, an ingredient quality control block, and an adapted footer with direct contact information.'
+                    },
+                    features: {
+                        es: ['Diseño premium modo oscuro', 'Menú interactivo con precios dinámicos', 'Flujo de órdenes "Pide Ahora"', 'Imágenes optimizadas en alta resolución'],
+                        en: ['Premium dark mode design', 'Interactive menu with dynamic pricing', '"Order Now" ordering flow', 'Optimized high-resolution images']
+                    },
+                    demo: '#'
+                }
+            };
+
+            // ===== TRADUCCIONES =====
             const translations = {
                 es: {
                     nav_back: 'Volver al Inicio',
@@ -251,12 +454,15 @@
                     projects_title_1: 'Proyectos &',
                     projects_title_2: 'Casos de Estudio',
                     projects_subtitle: 'Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales que he construido.',
-                    project1_name: 'Artisanal Kitchen',
-                    project1_purpose_label: 'Propósito',
-                    project1_purpose: 'Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio local.',
-                    project1_desc_label: 'Descripción',
-                    project1_desc: 'Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado con información de contacto directa.',
-                    project1_cta: 'Próximamente'
+                    project1_short: 'Experiencia web gourmet con menú interactivo, diseño premium y flujo de órdenes directo.',
+                    project_view: 'Ver Proyecto',
+                    modal_title: 'Detalles',
+                    modal_purpose: 'Propósito',
+                    modal_description: 'Descripción',
+                    modal_features: 'Características Clave',
+                    modal_demo: 'Ver Proyecto',
+                    modal_soon: 'Próximamente',
+                    toast_soon: 'Este proyecto estará disponible pronto'
                 },
                 en: {
                     nav_back: 'Back to Home',
@@ -264,17 +470,21 @@
                     projects_title_1: 'Projects &',
                     projects_title_2: 'Case Studies',
                     projects_subtitle: 'A detailed look at the code, architecture, and purpose behind the digital solutions I have built.',
-                    project1_name: 'Artisanal Kitchen',
-                    project1_purpose_label: 'Purpose',
-                    project1_purpose: 'To digitize the experience of a gourmet burger restaurant through a high-end web interface. The main goal is to captivate the user through visual content, structure a fluid interactive menu, and simulate a direct ordering flow ("Order Now") focused on driving conversions and sales for the local business.',
-                    project1_desc_label: 'Description',
-                    project1_desc: 'Premium web design developed under a deep dark mode aesthetic, using orange and gold tones to accentuate the restaurant\'s branding. The page features an architecture optimized for ultra-fast loading of high-resolution food images, categorized menu sections with dynamic pricing, an ingredient quality control block, and an adapted footer with direct contact information.',
-                    project1_cta: 'Coming Soon'
+                    project1_short: 'Gourmet web experience with interactive menu, premium design and direct ordering flow.',
+                    project_view: 'View Project',
+                    modal_title: 'Details',
+                    modal_purpose: 'Purpose',
+                    modal_description: 'Description',
+                    modal_features: 'Key Features',
+                    modal_demo: 'View Project',
+                    modal_soon: 'Coming Soon',
+                    toast_soon: 'This project will be available soon'
                 }
             };
 
             let currentLang = localStorage.getItem('anurdweb_lang') || 'es';
 
+            // ===== SISTEMA DE IDIOMAS =====
             function setLanguage(lang) {
                 currentLang = lang;
                 localStorage.setItem('anurdweb_lang', lang);
@@ -286,14 +496,151 @@
                     }
                 });
 
-                document.getElementById('langText').textContent = lang === 'es' ? 'EN' : 'ES';
+                const langES = document.getElementById('langES');
+                const langEN = document.getElementById('langEN');
+                if (langES && langEN) {
+                    langES.classList.toggle('active', lang === 'es');
+                    langEN.classList.toggle('active', lang === 'en');
+                }
+
                 document.documentElement.lang = lang === 'es' ? 'es' : 'en';
             }
 
             setLanguage(currentLang);
 
-            document.getElementById('langToggle').addEventListener('click', () => {
-                setLanguage(currentLang === 'es' ? 'en' : 'es');
+            document.getElementById('langES').addEventListener('click', () => setLanguage('es'));
+            document.getElementById('langEN').addEventListener('click', () => setLanguage('en'));
+
+            const langESMobile = document.getElementById('langESMobile');
+            const langENMobile = document.getElementById('langENMobile');
+            if (langESMobile && langENMobile) {
+                langESMobile.addEventListener('click', () => setLanguage('es'));
+                langENMobile.addEventListener('click', () => setLanguage('en'));
+            }
+
+            // ===== HAMBURGER MENU =====
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                hamburgerBtn.classList.toggle('open');
+                mobileMenu.classList.toggle('open');
+                document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+            }
+
+            hamburgerBtn.addEventListener('click', toggleMenu);
+            hamburgerBtn.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('open')) toggleMenu();
+                });
+            });
+
+            // ===== MODAL DE PROYECTOS =====
+            const modal = document.getElementById('projectModal');
+            const overlay = document.getElementById('modalOverlay');
+            const panel = document.getElementById('modalPanel');
+            const closeBtn = document.getElementById('closeModal');
+
+            function openModal(projectId) {
+                const project = projectsData[projectId];
+                if (!project) return;
+
+                // Llenar contenido del modal
+                document.getElementById('modalImg1').src = project.img1;
+                document.getElementById('modalImg2').src = project.img2;
+                document.getElementById('modalCategory').textContent = project.category[currentLang];
+                document.getElementById('modalName').innerHTML = project.name;
+                document.getElementById('modalPurpose').textContent = project.purpose[currentLang];
+                document.getElementById('modalDescription').textContent = project.description[currentLang];
+
+                // Características
+                const featuresList = document.getElementById('modalFeatures');
+                featuresList.innerHTML = project.features[currentLang].map(f => `
+                    <li class="flex items-center gap-3">
+                        <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </span>
+                        <span class="text-sm text-white/50">${f}</span>
+                    </li>
+                `).join('');
+
+                // Mostrar modal
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+
+                requestAnimationFrame(() => {
+                    overlay.classList.remove('opacity-0');
+                    overlay.classList.add('opacity-100');
+                    panel.classList.remove('translate-x-full');
+                    panel.classList.add('translate-x-0');
+                });
+            }
+
+            function closeModal() {
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0');
+                panel.classList.remove('translate-x-0');
+                panel.classList.add('translate-x-full');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 400);
+            }
+
+            // Eventos del modal
+            closeBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+
+            // Eventos de tarjetas de proyecto
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Si el click fue en el botón "Ver Proyecto", no hacer nada (el botón ya maneja su toast)
+                    if (e.target.closest('.open-project-btn')) return;
+                    const projectId = card.getAttribute('data-project');
+                    openModal(projectId);
+                });
+            });
+
+            // Evento del botón "Ver Proyecto" dentro de las tarjetas
+            document.querySelectorAll('.open-project-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const card = btn.closest('.project-card');
+                    if (card) {
+                        const projectId = card.getAttribute('data-project');
+                        openModal(projectId);
+                    }
+                });
+            });
+
+            // ===== TOAST "PRÓXIMAMENTE" =====
+            const modalDemoBtn = document.getElementById('modalDemoBtn');
+            const soonToast = document.getElementById('soonToast');
+            let toastTimeout;
+
+            modalDemoBtn.addEventListener('click', () => {
+                clearTimeout(toastTimeout);
+                soonToast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                soonToast.classList.add('opacity-100', 'translate-y-0');
+
+                toastTimeout = setTimeout(() => {
+                    soonToast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                    soonToast.classList.remove('opacity-100', 'translate-y-0');
+                }, 2500);
             });
         })();
     </script>

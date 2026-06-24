@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KV8DN95W');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí | AnurDweb</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#0A0A0A',
+                        'noir-light': '#111111',
+                        cyan: { 400: '#22D3EE', 500: '#06B6D4', 600: '#0891B2' },
+                        emerald: { 400: '#34D399', 500: '#10B981', 600: '#059669' },
+                        accent: { 400: '#FB923C', 500: '#F97316', 600: '#EA580C' },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#0A0A0A] text-white relative min-h-screen">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV8DN95W" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ===== FLOATING BACKGROUND BLOBS ===== -->
+    <div class="blob w-[500px] h-[500px] bg-cyan-500 opacity-[0.04] top-[-100px] left-[-200px] fixed z-0"></div>
+    <div class="blob w-[400px] h-[400px] bg-emerald-500 opacity-[0.03] bottom-[10%] right-[-150px] fixed z-0"></div>
+    <div class="blob w-[350px] h-[350px] bg-cyan-400 opacity-[0.03] top-[50%] left-[30%] fixed z-0"></div>
+
+    <!-- ===== GRID PATTERN OVERLAY ===== -->
+    <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
+
+    <!-- ===== GIANT AMBIENT LIGHT SPHERES ===== -->
+    <div
+        class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] absolute top-[15%] left-[-15%] pointer-events-none z-0">
+    </div>
+    <div
+        class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] absolute top-[55%] right-[-20%] pointer-events-none z-0">
+    </div>
+    <div
+        class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] absolute top-[80%] left-[10%] pointer-events-none z-0">
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- NAVBAR -->
+    <!-- ================================================================ -->
+    <header class="nav-glass fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html"
+                class="text-xl font-display font-bold tracking-tight nav-logo transition-all duration-300">
+                <span class="gradient-text-mixed">AnurD</span><span class="text-white/80">web</span>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html"
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Inicio</a>
+                <a href="sobre-mi.html"
+                    class="nav-link text-sm font-medium text-accent-400 transition-colors duration-300 relative">Sobre
+                    Mí</a>
+                <a href="proyectos.html"
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Proyectos</a>
+                <a href="index.html#contact"
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Contacto</a>
+            </nav>
+
+            <!-- CTA + Language Selector + Hamburger -->
+            <div class="flex items-center gap-3">
+                <!-- Selector de Idioma -->
+                <div id="langSelector"
+                    class="hidden md:inline-flex items-center gap-0 rounded-full border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:border-accent-500/30">
+                    <button id="langES"
+                        class="lang-option px-2.5 py-1.5 text-xs font-mono font-semibold transition-all duration-300 cursor-pointer"
+                        aria-label="Cambiar a español">ES</button>
+                    <span class="text-white/20 text-[10px] select-none">&rarr;</span>
+                    <button id="langEN"
+                        class="lang-option px-2.5 py-1.5 text-xs font-mono font-semibold transition-all duration-300 cursor-pointer"
+                        aria-label="Switch to English">EN</button>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="index.html#contact"
+                    class="hidden md:inline-flex btn-primary nav-cta bg-gradient-to-r from-accent-500 to-accent-600 text-noir px-5 py-2 rounded-full text-sm font-bold tracking-wide shadow-lg shadow-accent-500/20">
+                    Cotizar Web
+                </a>
+
+                <!-- Hamburger -->
+                <div class="hamburger" id="hamburgerBtn" aria-label="Menu" role="button" tabindex="0">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================================================ -->
+    <!-- MOBILE MENU OVERLAY -->
+    <!-- ================================================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-link">Inicio</a>
+        <a href="sobre-mi.html" class="mobile-link" style="color: #F97316;">Sobre Mí</a>
+        <a href="proyectos.html" class="mobile-link">Proyectos</a>
+        <a href="index.html#contact"
+            class="mobile-link mt-4 inline-block px-8 py-3 rounded-full bg-gradient-to-r from-accent-500 to-accent-600 text-noir text-base font-bold !text-noir shadow-lg shadow-accent-500/20">
+            Cotizar Web</a>
+        <!-- Selector de Idioma - Mobile -->
+        <div id="langSelectorMobile"
+            class="mobile-link mt-6 inline-flex items-center gap-0 rounded-full border border-white/10 bg-white/5 overflow-hidden transition-all duration-300">
+            <button id="langESMobile"
+                class="lang-option-mobile px-4 py-2 text-sm font-mono font-semibold transition-all duration-300 cursor-pointer"
+                aria-label="Cambiar a español">ES</button>
+            <span class="text-white/20 text-xs select-none">&rarr;</span>
+            <button id="langENMobile"
+                class="lang-option-mobile px-4 py-2 text-sm font-mono font-semibold transition-all duration-300 cursor-pointer"
+                aria-label="Switch to English">EN</button>
+        </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================================================ -->
+    <main class="relative z-10 pt-28 pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Encabezado de la Sección -->
+            <div class="mb-16">
+                <span class="inline-block text-xs font-mono text-accent-400 uppercase tracking-[0.3em] mb-4"
+                    data-translate="about_label">Sobre AnurDweb</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-4">
+                    <span data-translate="about_name_1">Anuar</span> <span class="gradient-text-cyan"
+                        data-translate="about_name_2">Díaz</span>
+                </h1>
+            </div>
+
+            <!-- CONTENIDO PRINCIPAL: 2 Columnas -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                <!-- ===== COLUMNA IZQUIERDA: Imagen + Status ===== -->
+                <div class="lg:col-span-5">
+                    <div class="about-image-wrapper relative w-full max-w-sm mx-auto lg:mx-0">
+                        <!-- ============================================ -->
+                        <!-- REEMPLAZAR: Ruta de tu imagen de perfil      -->
+                        <!-- Cambia src="..." por tu foto final            -->
+                        <!-- ============================================ -->
+                        <img src="img/sobre-mi.png"
+                            alt="Anuar Díaz - Desarrollador Web"
+                            class="w-full aspect-[4/5] object-cover rounded-2xl border border-white/5">
+
+                        <!-- Glow detrás de la imagen -->
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-br from-accent-500/10 to-transparent rounded-3xl blur-2xl -z-10">
+                        </div>
+
+                        <!-- Badge de Status flotante -->
+                        <div
+                            class="status-badge absolute -bottom-4 left-1/2 -translate-x-1/2 glass-strong rounded-full px-5 py-2.5 flex items-center gap-2.5 border border-white/10 shadow-xl">
+                            <span class="w-2.5 h-2.5 bg-accent-500 rounded-full animate-pulse flex-shrink-0"></span>
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-[9px] font-mono text-white/30 uppercase tracking-[0.15em] leading-none">Status</span>
+                                <span class="text-xs font-semibold text-white/80 whitespace-nowrap"
+                                    data-translate="about_status">Creando Soluciones Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== COLUMNA DERECHA: Contenido ===== -->
+                <div class="lg:col-span-7 flex flex-col gap-5">
+                    <!-- Párrafo de Introducción -->
+                    <p class="text-base lg:text-lg text-white/50 leading-relaxed max-w-2xl"
+                        data-translate="about_intro">
+                        Soy un desarrollador web basado en Colombia, apasionado por transformar pantallas estáticas en
+                        experiencias digitales memorables. No me conformo con los diseños genéricos; mi enfoque está en
+                        la creación de interfaces de alto nivel que cobran vida a medida que el usuario navega,
+                        combinando una estética impecable con una fluidez técnica absoluta.
+                    </p>
+
+                    <!-- Separador -->
+                    <div class="border-t border-white/5 pt-5 mt-1">
+                        <!-- Subtítulo de Sección -->
+                        <h2 class="text-lg lg:text-xl font-display font-bold text-white/80 mb-4"
+                            data-translate="about_journey_title">Mi Trayectoria</h2>
+
+                        <!-- Párrafos de Trayectoria -->
+                        <div class="flex flex-col gap-3">
+                            <p class="text-sm lg:text-base text-white/40 leading-relaxed"
+                                data-translate="about_journey_1">
+                                Mi viaje en el mundo del código nació de una obsesión por los detalles visuales y la
+                                interactividad. Me he especializado en dominar el ecosistema frontend para construir
+                                sitios web responsivos donde cada animación tiene un propósito y cada transición se
+                                siente natural.
+                            </p>
+                            <p class="text-sm lg:text-base text-white/40 leading-relaxed"
+                                data-translate="about_journey_2">
+                                Para mí, un gran portafolio o una aplicación web exitosa no solo debe verse bien en el
+                                primer vistazo, sino que debe guiar al usuario de forma intuitiva, desplegando la
+                                información con elegancia y garantizando una velocidad de carga brutal. Cada línea de
+                                código que escribo está pensada para dejar una huella digital premium.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECCIÓN: TECNOLOGÍAS & HERRAMIENTAS ===== -->
+            <div class="mt-20">
+                <!-- Encabezado de Sección -->
+                <div class="mb-10">
+                    <span class="inline-block text-xs font-mono text-accent-400 uppercase tracking-[0.25em] mb-3"
+                        data-translate="about_tech_label">Tecnologías & Herramientas</span>
+                    <h2 class="text-2xl sm:text-3xl font-display font-bold tracking-tight text-white/90"
+                        data-translate="about_tech_title">Mi Stack <span class="gradient-text-cyan">Tecnológico</span></h2>
+                </div>
+
+                <!-- Grid Asimétrico: Tech Categories + Foco Actual -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                    <!-- ===== COLUMNA IZQUIERDA: Categorías Tecnológicas ===== -->
+                    <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                        <!-- ===== TARJETA: FRONTEND ===== -->
+                        <div
+                            class="glass rounded-2xl p-5 sm:p-6 border border-white/5 hover:border-accent-500/20 transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-8 h-8 rounded-lg bg-accent-500/10 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-display font-bold text-white/80 text-sm uppercase tracking-wider">Frontend</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">HTML</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">CSS</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">JavaScript</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">TypeScript</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">React</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">Tailwind CSS</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">Vite</span>
+                            </div>
+                        </div>
+
+                        <!-- ===== TARJETA: BACKEND ===== -->
+                        <div
+                            class="glass rounded-2xl p-5 sm:p-6 border border-white/5 hover:border-accent-500/20 transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-display font-bold text-white/80 text-sm uppercase tracking-wider">Backend</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">Node.js</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">Python</span>
+                            </div>
+                        </div>
+
+                        <!-- ===== TARJETA: DATABASE ===== -->
+                        <div
+                            class="glass rounded-2xl p-5 sm:p-6 border border-white/5 hover:border-accent-500/20 transition-all duration-300 sm:col-span-2">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-display font-bold text-white/80 text-sm uppercase tracking-wider">Database</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">MySQL</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">PostgreSQL</span>
+                                <span class="tech-pill px-3 py-1.5 text-xs font-mono font-medium rounded-lg border border-white/10 bg-white/5 text-white/60 transition-all duration-300 hover:border-accent-500/40 hover:text-accent-400 hover:bg-accent-500/5">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== COLUMNA DERECHA: Foco de Atención ===== -->
+                    <div class="lg:col-span-4">
+                        <div
+                            class="glass rounded-2xl p-5 sm:p-6 border border-white/5 hover:border-accent-500/20 transition-all duration-300 h-full">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-8 h-8 rounded-lg bg-accent-500/10 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-display font-bold text-white/80 text-sm uppercase tracking-wider"
+                                    data-translate="about_focus_title">Foco de Atención Actual</h3>
+                            </div>
+                            <ul class="flex flex-col gap-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2 flex-shrink-0"></span>
+                                    <span class="text-sm text-white/50 leading-relaxed"
+                                        data-translate="about_focus_1">Ingeniería y Desarrollo Web Profesional</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2 flex-shrink-0"></span>
+                                    <span class="text-sm text-white/50 leading-relaxed"
+                                        data-translate="about_focus_2">Rendimiento Frontend</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2 flex-shrink-0"></span>
+                                    <span class="text-sm text-white/50 leading-relaxed"
+                                        data-translate="about_focus_3">Soluciones Digitales</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2 flex-shrink-0"></span>
+                                    <span class="text-sm text-white/50 leading-relaxed"
+                                        data-translate="about_focus_4">Estructuración de Interfaces UI/UX Minimalistas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ================================================================ -->
+    <!-- FOOTER -->
+    <!-- ================================================================ -->
+    <footer class="relative border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-3">
+                    <span class="text-xs font-mono text-white/20 tracking-wider">ANURDWEB // &copy; 2026</span>
+                    <span class="text-white/10 hidden sm:inline">|</span>
+                    <span class="text-xs text-white/15 tracking-wide">BUILT FOR PERFORMANCE.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-5">
+                    <a href="https://www.instagram.com/soyanurdweb" target="_blank" rel="noopener noreferrer"
+                        class="text-white/20 hover:text-cyan-400 transition-colors duration-300" aria-label="Instagram">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="mailto:programar2026web@gmail.com"
+                        class="text-white/20 hover:text-cyan-400 transition-colors duration-300" aria-label="Email">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Legal Links -->
+            <div
+                class="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <a href="politica-privacidad.html"
+                    class="text-[13px] text-white/60 hover:text-cyan-400 transition-colors duration-300 tracking-wide underline underline-offset-4 decoration-white/20 hover:decoration-cyan-400/50">Política
+                    de Privacidad</a>
+                <span class="text-white/20 hidden sm:inline text-xs">|</span>
+                <a href="terminos-condiciones.html"
+                    class="text-[13px] text-white/60 hover:text-cyan-400 transition-colors duration-300 tracking-wide underline underline-offset-4 decoration-white/20 hover:decoration-cyan-400/50">Términos
+                    y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            (function () {
+                'use strict';
+
+                const translations = {
+                    es: {
+                        nav_back: 'Volver al Inicio',
+                        about_label: 'Sobre AnurDweb',
+                        about_name_1: 'Anuar',
+                        about_name_2: 'Díaz',
+                        about_intro: 'Soy un desarrollador web basado en Colombia, apasionado por transformar pantallas estáticas en experiencias digitales memorables. No me conformo con los diseños genéricos; mi enfoque está en la creación de interfaces de alto nivel que cobran vida a medida que el usuario navega, combinando una estética impecable con una fluidez técnica absoluta.',
+                        about_status: 'Creando Soluciones Web',
+                        about_journey_title: 'Mi Trayectoria',
+                        about_journey_1: 'Mi viaje en el mundo del código nació de una obsesión por los detalles visuales y la interactividad. Me he especializado en dominar el ecosistema frontend para construir sitios web responsivos donde cada animación tiene un propósito y cada transición se siente natural.',
+                        about_journey_2: 'Para mí, un gran portafolio o una aplicación web exitosa no solo debe verse bien en el primer vistazo, sino que debe guiar al usuario de forma intuitiva, desplegando la información con elegancia y garantizando una velocidad de carga brutal. Cada línea de código que escribo está pensada para dejar una huella digital premium.',
+                        about_tech_label: 'Tecnologías & Herramientas',
+                        about_tech_title: 'Mi Stack Tecnológico',
+                        about_focus_title: 'Foco de Atención Actual',
+                        about_focus_1: 'Ingeniería y Desarrollo Web Profesional',
+                        about_focus_2: 'Rendimiento Frontend',
+                        about_focus_3: 'Soluciones Digitales',
+                        about_focus_4: 'Estructuración de Interfaces UI/UX Minimalistas'
+                    },
+                    en: {
+                        nav_back: 'Back to Home',
+                        about_label: 'About AnurDweb',
+                        about_name_1: 'Anuar',
+                        about_name_2: 'Díaz',
+                        about_intro: 'I\'m a web developer based in Colombia, passionate about transforming static screens into memorable digital experiences. I don\'t settle for generic designs; my focus is on creating high-level interfaces that come alive as the user navigates, combining impeccable aesthetics with absolute technical fluidity.',
+                        about_status: 'Building Web Solutions',
+                        about_journey_title: 'My Journey',
+                        about_journey_1: 'My journey in the world of code was born from an obsession with visual details and interactivity. I have specialized in mastering the frontend ecosystem to build responsive websites where every animation has a purpose and every transition feels natural.',
+                        about_journey_2: 'For me, a great portfolio or a successful web application shouldn\'t just look good at first glance, but should guide the user intuitively, unfolding information with elegance and ensuring brutal loading speed. Every line of code I write is designed to leave a premium digital footprint.',
+                        about_tech_label: 'Technologies & Tools',
+                        about_tech_title: 'My Tech Stack',
+                        about_focus_title: 'Current Focus',
+                        about_focus_1: 'Professional Web Engineering & Development',
+                        about_focus_2: 'Frontend Performance',
+                        about_focus_3: 'Digital Solutions',
+                        about_focus_4: 'Minimalist UI/UX Interface Design'
+                    }
+                };
+
+                let currentLang = localStorage.getItem('anurdweb_lang') || 'es';
+
+                function setLanguage(lang) {
+                    currentLang = lang;
+                    localStorage.setItem('anurdweb_lang', lang);
+
+                    document.querySelectorAll('[data-translate]').forEach(el => {
+                        const key = el.getAttribute('data-translate');
+                        if (translations[lang][key]) {
+                            el.textContent = translations[lang][key];
+                        }
+                    });
+
+                    // Update language selector buttons
+                    const langES = document.getElementById('langES');
+                    const langEN = document.getElementById('langEN');
+                    if (langES && langEN) {
+                        langES.classList.toggle('active', lang === 'es');
+                        langEN.classList.toggle('active', lang === 'en');
+                    }
+
+                    document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+                }
+
+                setLanguage(currentLang);
+
+                // Desktop language selector events
+                document.getElementById('langES').addEventListener('click', () => {
+                    setLanguage('es');
+                });
+                document.getElementById('langEN').addEventListener('click', () => {
+                    setLanguage('en');
+                });
+
+                // Mobile language selector events
+                const langESMobile = document.getElementById('langESMobile');
+                const langENMobile = document.getElementById('langENMobile');
+                if (langESMobile && langENMobile) {
+                    langESMobile.addEventListener('click', () => {
+                        setLanguage('es');
+                    });
+                    langENMobile.addEventListener('click', () => {
+                        setLanguage('en');
+                    });
+                }
+
+                // Hamburger menu
+                const hamburgerBtn = document.getElementById('hamburgerBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+
+                function toggleMenu() {
+                    hamburgerBtn.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburgerBtn.addEventListener('click', toggleMenu);
+                hamburgerBtn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mobileMenu.classList.contains('open')) toggleMenu();
+                    });
+                });
+            })();
+    </script>
+
+</body>
+
+</html>

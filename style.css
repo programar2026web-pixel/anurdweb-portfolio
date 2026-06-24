@@ -23,70 +23,6 @@ html, body {
     width: 100%;
 }
 
-body.loading {
-    overflow: hidden;
-}
-
-/* ===== LOADING SCREEN ===== */
-#loader {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: #0A0A0A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-#loader.loaded {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-#loader .loader-logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #22D3EE, #10B981);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 2rem;
-}
-
-#loader .loader-bar-track {
-    width: 200px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-#loader .loader-bar-fill {
-    height: 100%;
-    width: 0%;
-    border-radius: 2px;
-    background: linear-gradient(90deg, #06B6D4, #10B981);
-    animation: loaderFill 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-#loader .loader-percent {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.2);
-    margin-top: 1rem;
-    letter-spacing: 0.1em;
-}
-
-@keyframes loaderFill {
-    0% { width: 0%; }
-    100% { width: 100%; }
-}
-
 /* ===== CUSTOM SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0A0A0A; }
@@ -277,7 +213,100 @@ body.loading {
 }
 
 .nav-glass.scrolled {
-    background: rgba(10, 10, 10, 0.9);
+    background: rgba(10, 10, 10, 0.92);
+    border-bottom-color: rgba(249, 115, 22, 0.1);
+}
+
+/* ===== NAV LINK UNDERLINE ANIMATION ===== */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #F97316, #FB923C);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===== NAV LOGO HOVER ===== */
+.nav-logo:hover {
+    filter: brightness(1.2);
+}
+
+/* ===== LANGUAGE SELECTOR ===== */
+.lang-option {
+    color: rgba(255, 255, 255, 0.35);
+    background: transparent;
+}
+
+.lang-option:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.lang-option.active {
+    color: #F97316;
+    background: rgba(249, 115, 22, 0.12);
+    text-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
+}
+
+.lang-option-mobile {
+    color: rgba(255, 255, 255, 0.35);
+    background: transparent;
+}
+
+.lang-option-mobile:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.lang-option-mobile.active {
+    color: #F97316;
+    background: rgba(249, 115, 22, 0.12);
+    text-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
+}
+
+/* ===== NAV CTA GLOW ===== */
+.nav-cta {
+    transition: all 0.4s ease;
+}
+
+.nav-cta:hover {
+    box-shadow: 0 0 24px rgba(249, 115, 22, 0.4), 0 4px 12px rgba(249, 115, 22, 0.2);
+    transform: scale(1.05);
+}
+
+/* ===== ABOUT IMAGE WRAPPER ===== */
+.about-image-wrapper {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-image-wrapper:hover {
+    transform: translateY(-4px);
+}
+
+.about-image-wrapper img {
+    transition: all 0.5s ease;
+}
+
+.about-image-wrapper:hover img {
+    border-color: rgba(249, 115, 22, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(249, 115, 22, 0.08);
+}
+
+/* ===== STATUS BADGE ===== */
+.status-badge {
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.status-badge:hover {
+    border-color: rgba(249, 115, 22, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(249, 115, 22, 0.1);
 }
 
 /* ===== SIGNATURE ===== */
@@ -356,7 +385,7 @@ body.loading {
 .hamburger.open span:nth-child(1) {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    background: #22D3EE;
+    background: #F97316;
 }
 
 .hamburger.open span:nth-child(2) {
@@ -367,7 +396,7 @@ body.loading {
 .hamburger.open span:nth-child(3) {
     bottom: 50%;
     transform: translateY(50%) rotate(-45deg);
-    background: #22D3EE;
+    background: #F97316;
 }
 
 @media (max-width: 768px) {
@@ -424,7 +453,8 @@ body.loading {
     visibility: visible;
 }
 
-.mobile-menu a {
+.mobile-menu a,
+.mobile-menu .mobile-link {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -434,7 +464,8 @@ body.loading {
     opacity: 0;
 }
 
-.mobile-menu.open a {
+.mobile-menu.open a,
+.mobile-menu.open .mobile-link {
     transform: translateY(0);
     opacity: 1;
 }
@@ -445,8 +476,10 @@ body.loading {
 .mobile-menu.open a:nth-child(4) { transition-delay: 0.25s; }
 .mobile-menu.open a:nth-child(5) { transition-delay: 0.3s; }
 
+.mobile-menu.open .mobile-link:nth-child(6) { transition-delay: 0.35s; }
+
 .mobile-menu a:hover {
-    color: #22D3EE;
+    color: #F97316;
 }
 
 /* ===== FORM SUCCESS ===== */
@@ -470,4 +503,52 @@ body.loading {
 @keyframes checkPop {
     0% { transform: scale(0); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== TECH PILL HOVER ===== */
+.tech-pill {
+    cursor: default;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+}
+
+/* ===== LINE CLAMP UTILITY ===== */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ===== MODAL TRANSITIONS ===== */
+#projectModal {
+    transition: opacity 0.3s ease;
+}
+
+#modalPanel {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hide scrollbar but keep scroll */
+#modalPanel .overflow-y-auto {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#modalPanel .overflow-y-auto::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== PROJECT CARD HOVER ===== */
+.project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(249, 115, 22, 0.1);
 }

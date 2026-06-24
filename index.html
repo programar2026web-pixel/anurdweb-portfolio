@@ -30,6 +30,7 @@
                         'noir-light': '#111111',
                         cyan: { 400: '#22D3EE', 500: '#06B6D4', 600: '#0891B2' },
                         emerald: { 400: '#34D399', 500: '#10B981', 600: '#059669' },
+                        accent: { 400: '#FB923C', 500: '#F97316', 600: '#EA580C' },
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -70,37 +71,28 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- ================================================================ -->
-    <!-- LOADING SCREEN -->
-    <!-- ================================================================ -->
-    <div id="loader">
-        <div class="loader-logo">AnurDweb</div>
-        <div class="loader-bar-track">
-            <div class="loader-bar-fill"></div>
-        </div>
-        <div class="loader-percent">0%</div>
-    </div>
-
-    <!-- ================================================================ -->
     <!-- MOBILE MENU OVERLAY -->
     <!-- ================================================================ -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#work" class="mobile-link" data-translate="nav_work">Work</a>
-        <a href="#services" class="mobile-link" data-translate="nav_services">Services</a>
-        <a href="#process" class="mobile-link" data-translate="nav_process">Process</a>
-        <a href="#portfolio" class="mobile-link" data-translate="nav_portfolio">Portfolio</a>
+        <a href="#work" class="mobile-link" data-translate="nav_home">Inicio</a>
+        <a href="sobre-mi.html" class="mobile-link" data-translate="nav_about">Sobre Mí</a>
+        <a href="proyectos.html" class="mobile-link" data-translate="nav_projects">Proyectos</a>
         <a href="#contact"
-            class="mobile-link mt-4 inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-noir text-base font-bold !text-noir"
+            class="mobile-link mt-4 inline-block px-8 py-3 rounded-full bg-gradient-to-r from-accent-500 to-accent-600 text-noir text-base font-bold !text-noir shadow-lg shadow-accent-500/20"
             data-translate="nav_cta">Cotizar Web</a>
-        <!-- Language Toggle Mobile -->
-        <button id="langToggleMobile"
-            class="mobile-link mt-6 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-mono text-white/50 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-300 cursor-pointer"
-            aria-label="Toggle language">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.568.422-3.037 1.157-4.29" />
-            </svg>
-            <span id="langTextMobile">EN</span>
-        </button>
+        <!-- ============================== -->
+        <!-- SELECTOR DE IDIOMA - MOBILE -->
+        <!-- ============================== -->
+        <div id="langSelectorMobile"
+            class="mobile-link mt-6 inline-flex items-center gap-0 rounded-full border border-white/10 bg-white/5 overflow-hidden transition-all duration-300">
+            <button id="langESMobile"
+                class="lang-option-mobile px-4 py-2 text-sm font-mono font-semibold transition-all duration-300 cursor-pointer"
+                aria-label="Cambiar a español">ES</button>
+            <span class="text-white/20 text-xs select-none">&rarr;</span>
+            <button id="langENMobile"
+                class="lang-option-mobile px-4 py-2 text-sm font-mono font-semibold transition-all duration-300 cursor-pointer"
+                aria-label="Switch to English">EN</button>
+        </div>
     </div>
 
     <!-- ===== FLOATING BACKGROUND BLOBS ===== -->
@@ -127,42 +119,49 @@
     <header class="nav-glass fixed top-0 left-0 right-0 z-50" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="text-xl font-display font-bold tracking-tight">
+            <a href="#" class="text-xl font-display font-bold tracking-tight nav-logo transition-all duration-300">
                 <span class="gradient-text-mixed">AnurD</span><span class="text-white/80">web</span>
             </a>
 
             <!-- Nav Links (Desktop) -->
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#work"
-                    class="text-sm font-medium text-white/50 hover:text-cyan-400 transition-colors duration-300"
-                    data-translate="nav_work">Work</a>
-                <a href="#services"
-                    class="text-sm font-medium text-white/50 hover:text-cyan-400 transition-colors duration-300"
-                    data-translate="nav_services">Services</a>
-                <a href="#process"
-                    class="text-sm font-medium text-white/50 hover:text-cyan-400 transition-colors duration-300"
-                    data-translate="nav_process">Process</a>
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative"
+                    data-translate="nav_home">Inicio</a>
+                <a href="sobre-mi.html"
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative"
+                    data-translate="nav_about">Sobre Mí</a>
+                <a href="proyectos.html"
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative"
+                    data-translate="nav_projects">Proyectos</a>
                 <a href="#contact"
-                    class="text-sm font-medium text-white/50 hover:text-cyan-400 transition-colors duration-300"
-                    data-translate="nav_contact">Contact</a>
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative"
+                    data-translate="nav_contact">Contacto</a>
             </nav>
 
-            <!-- CTA + Hamburger -->
+            <!-- CTA + Language Selector + Hamburger -->
             <div class="flex items-center gap-3">
-                <!-- Language Toggle -->
-                <button id="langToggle"
-                    class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-white/50 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-300 cursor-pointer"
-                    aria-label="Toggle language">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.568.422-3.037 1.157-4.29" />
-                    </svg>
-                    <span id="langText">EN</span>
-                </button>
+                <!-- ============================== -->
+                <!-- SELECTOR DE IDIOMA (ES ➔ EN) -->
+                <!-- ============================== -->
+                <div id="langSelector"
+                    class="hidden md:inline-flex items-center gap-0 rounded-full border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:border-accent-500/30">
+                    <button id="langES"
+                        class="lang-option px-2.5 py-1.5 text-xs font-mono font-semibold transition-all duration-300 cursor-pointer"
+                        aria-label="Cambiar a español">ES</button>
+                    <span class="text-white/20 text-[10px] select-none">&rarr;</span>
+                    <button id="langEN"
+                        class="lang-option px-2.5 py-1.5 text-xs font-mono font-semibold transition-all duration-300 cursor-pointer"
+                        aria-label="Switch to English">EN</button>
+                </div>
+
+                <!-- CTA Button -->
                 <a href="#contact"
-                    class="hidden md:inline-flex btn-primary bg-gradient-to-r from-cyan-500 to-emerald-500 text-noir px-5 py-2 rounded-full text-sm font-bold tracking-wide">
+                    class="hidden md:inline-flex btn-primary nav-cta bg-gradient-to-r from-accent-500 to-accent-600 text-noir px-5 py-2 rounded-full text-sm font-bold tracking-wide shadow-lg shadow-accent-500/20">
                     <span data-translate="nav_cta">Cotizar Web</span>
                 </a>
+
+                <!-- Hamburger -->
                 <div class="hamburger" id="hamburgerBtn" aria-label="Menu" role="button" tabindex="0">
                     <span></span><span></span><span></span>
                 </div>
@@ -892,9 +891,12 @@
                 =========================== */
                 const translations = {
                     es: {
+                        nav_home: 'Inicio',
                         nav_work: 'Proyectos',
+                        nav_about: 'Sobre Mí',
                         nav_services: 'Servicios',
                         nav_process: 'Proceso',
+                        nav_projects: 'Proyectos',
                         nav_portfolio: 'Portafolio',
                         nav_contact: 'Contacto',
                         nav_cta: 'Cotizar Web',
@@ -904,6 +906,15 @@
                         hero_title_3: 'Digitales.',
                         hero_subtitle: 'Diseño y desarrollo de sitios web modernos, rápidos y optimizados. Ayudo a negocios locales a construir su primera presencia digital de alto impacto.',
                         hero_cta: 'Ver Portafolio',
+                        about_label: 'Sobre AnurDweb',
+                        about_name_1: 'Anuar',
+                        about_name_2: 'Díaz',
+                        about_intro: 'Soy un Desarrollador Web de Colombia enfocado en crear sitios interactivos, modernos y de alto impacto. Combino diseño limpio con código optimizado para construir experiencias digitales que destacan.',
+                        about_status: 'Creando Soluciones Web',
+                        about_journey_title: 'Mi Trayectoria',
+                        about_journey_1: 'Mi pasión por el código nació de la curiosidad por entender cómo funcionan las cosas en la web. Lo que comenzó como pequeños experimentos evolucionó hasta convertirse en mi forma de crear soluciones reales para negocios y emprendedores.',
+                        about_journey_2: 'Me especializo en el diseño responsivo y el desarrollo de interfaces fluidas donde la información se despliega de forma premium al hacer scroll. Cada proyecto es una oportunidad para combinar estética y rendimiento en un solo producto digital.',
+                        about_journey_3: 'Creo firmemente que un sitio web no solo debe verse bien, sino que debe cargar rápido, ser accesible y generar resultados tangibles. Así es como construyo cada presencia digital: con propósito y excelencia técnica.',
                         services_label: 'Servicios',
                         services_title_1: 'Lo Que',
                         services_title_2: 'Construyo',
@@ -948,9 +959,12 @@
                         faq_a3: 'Trabajamos con un esquema estructurado: una planificación inicial detallada y un anticipo para comenzar el desarrollo técnico.'
                     },
                     en: {
+                        nav_home: 'Home',
                         nav_work: 'Work',
+                        nav_about: 'About Me',
                         nav_services: 'Services',
                         nav_process: 'Process',
+                        nav_projects: 'Projects',
                         nav_portfolio: 'Portfolio',
                         nav_contact: 'Contact',
                         nav_cta: 'Get a Quote',
@@ -960,6 +974,15 @@
                         hero_title_3: 'Experiences.',
                         hero_subtitle: 'Design and development of modern, fast and optimized websites. I help local businesses build their first high-impact digital presence.',
                         hero_cta: 'View Portfolio',
+                        about_label: 'About AnurDweb',
+                        about_name_1: 'Anuar',
+                        about_name_2: 'Díaz',
+                        about_intro: 'I\'m a Web Developer from Colombia focused on creating interactive, modern, and high-impact websites. I combine clean design with optimized code to build digital experiences that stand out.',
+                        about_status: 'Building Web Solutions',
+                        about_journey_title: 'My Journey',
+                        about_journey_1: 'My passion for coding was born from curiosity about how things work on the web. What started as small experiments evolved into my way of creating real solutions for businesses and entrepreneurs.',
+                        about_journey_2: 'I specialize in responsive design and developing fluid interfaces where information unfolds in a premium way as you scroll. Each project is an opportunity to combine aesthetics and performance in a single digital product.',
+                        about_journey_3: 'I firmly believe that a website should not only look good, but should load fast, be accessible, and generate tangible results. That\'s how I build every digital presence: with purpose and technical excellence.',
                         services_label: 'Services',
                         services_title_1: 'What I',
                         services_title_2: 'Build',
@@ -1027,11 +1050,20 @@
                         }
                     });
 
-                    // Update toggle button text
-                    document.getElementById('langText').textContent = lang === 'es' ? 'EN' : 'ES';
-                    const langTextMobile = document.getElementById('langTextMobile');
-                    if (langTextMobile) {
-                        langTextMobile.textContent = lang === 'es' ? 'EN' : 'ES';
+                    // Update visual state of language selector buttons (Desktop)
+                    const langES = document.getElementById('langES');
+                    const langEN = document.getElementById('langEN');
+                    if (langES && langEN) {
+                        langES.classList.toggle('active', lang === 'es');
+                        langEN.classList.toggle('active', lang === 'en');
+                    }
+
+                    // Update visual state of language selector buttons (Mobile)
+                    const langESMobile = document.getElementById('langESMobile');
+                    const langENMobile = document.getElementById('langENMobile');
+                    if (langESMobile && langENMobile) {
+                        langESMobile.classList.toggle('active', lang === 'es');
+                        langENMobile.classList.toggle('active', lang === 'en');
                     }
 
                     // Update html lang attribute
@@ -1041,37 +1073,41 @@
                 // Initialize language from localStorage
                 setLanguage(currentLang);
 
-                // Language toggle event
-                document.getElementById('langToggle').addEventListener('click', () => {
-                    setLanguage(currentLang === 'es' ? 'en' : 'es');
+                // Desktop language selector events
+                document.getElementById('langES').addEventListener('click', () => {
+                    setLanguage('es');
                 });
-                const langToggleMobile = document.getElementById('langToggleMobile');
-                if (langToggleMobile) {
-                    langToggleMobile.addEventListener('click', () => {
-                        setLanguage(currentLang === 'es' ? 'en' : 'es');
+                document.getElementById('langEN').addEventListener('click', () => {
+                    setLanguage('en');
+                });
+
+                // Mobile language selector events
+                const langESMobile = document.getElementById('langESMobile');
+                const langENMobile = document.getElementById('langENMobile');
+                if (langESMobile && langENMobile) {
+                    langESMobile.addEventListener('click', () => {
+                        setLanguage('es');
+                    });
+                    langENMobile.addEventListener('click', () => {
+                        setLanguage('en');
                     });
                 }
 
-                /* ===========================
-                   LOADING SCREEN
-                =========================== */
-                const loader = document.getElementById('loader');
-                const loaderPercent = loader.querySelector('.loader-percent');
-                let progress = 0;
-                const interval = setInterval(() => {
-                    progress += Math.floor(Math.random() * 15) + 5;
-                    if (progress >= 100) {
-                        progress = 100;
-                        clearInterval(interval);
+                // Initialize GSAP directly (no loading screen)
+                setTimeout(() => {
+                    initGSAP();
+                }, 100);
+
+                // Handle hash navigation from other pages
+                if (window.location.hash) {
+                    const targetId = window.location.hash.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
                         setTimeout(() => {
-                            loader.classList.add('loaded');
-                            document.body.classList.remove('loading');
-                            initGSAP();
-                        }, 400);
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 300);
                     }
-                    loaderPercent.textContent = progress + '%';
-                }, 150);
-                document.body.classList.add('loading');
+                }
 
                 /* ===========================
                    HAMBURGER / MOBILE MENU
