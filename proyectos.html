@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KV8DN95W');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | AnurDweb</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#0A0A0A',
+                        'noir-light': '#111111',
+                        cyan: { 400: '#22D3EE', 500: '#06B6D4', 600: '#0891B2' },
+                        emerald: { 400: '#34D399', 500: '#10B981', 600: '#059669' },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#0A0A0A] text-white relative min-h-screen">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV8DN95W" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ===== FLOATING BACKGROUND BLOBS ===== -->
+    <div class="blob w-[500px] h-[500px] bg-cyan-500 opacity-[0.04] top-[-100px] left-[-200px] fixed z-0"></div>
+    <div class="blob w-[400px] h-[400px] bg-emerald-500 opacity-[0.03] bottom-[10%] right-[-150px] fixed z-0"></div>
+    <div class="blob w-[350px] h-[350px] bg-cyan-400 opacity-[0.03] top-[50%] left-[30%] fixed z-0"></div>
+
+    <!-- ===== GRID PATTERN OVERLAY ===== -->
+    <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
+
+    <!-- ===== GIANT AMBIENT LIGHT SPHERES ===== -->
+    <div class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] absolute top-[15%] left-[-15%] pointer-events-none z-0"></div>
+    <div class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] absolute top-[55%] right-[-20%] pointer-events-none z-0"></div>
+    <div class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] absolute top-[80%] left-[10%] pointer-events-none z-0"></div>
+
+    <!-- ================================================================ -->
+    <!-- NAVBAR -->
+    <!-- ================================================================ -->
+    <header class="nav-glass fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-display font-bold tracking-tight">
+                <span class="gradient-text-mixed">AnurD</span><span class="text-white/80">web</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <button id="langToggle"
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-white/50 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-300 cursor-pointer"
+                    aria-label="Toggle language">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.568.422-3.037 1.157-4.29" />
+                    </svg>
+                    <span id="langText">EN</span>
+                </button>
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-white/50 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-300">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span data-translate="nav_back">Volver al Inicio</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================================================ -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================================================ -->
+    <main class="relative z-10 pt-28 pb-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Encabezado de la Sección -->
+            <div class="mb-16">
+                <span class="inline-block text-xs font-mono text-cyan-400 uppercase tracking-[0.3em] mb-4" data-translate="projects_label">Portafolio</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-4">
+                    <span data-translate="projects_title_1">Proyectos &</span> <span class="gradient-text-cyan" data-translate="projects_title_2">Casos de Estudio</span>
+                </h1>
+                <p class="text-base sm:text-lg text-white/40 max-w-2xl font-light" data-translate="projects_subtitle">Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales que he construido.</p>
+            </div>
+
+            <!-- CONTENEDOR DE PROYECTOS -->
+            <div class="space-y-24">
+
+                <!-- PROYECTO: BURGER & CO. -->
+                <article
+                    class="glass rounded-2xl overflow-hidden border border-white/5 shadow-xl shadow-cyan-500/5 flex flex-col lg:flex-row gap-8 p-6 sm:p-8">
+
+                    <!-- Columna Izquierda: Capturas Reales del Proyecto -->
+                    <div class="w-full lg:w-1/2 flex flex-col gap-4">
+                        <!-- Imagen Principal: El Hero de la tienda -->
+                        <div
+                            class="relative group overflow-hidden rounded-xl border border-white/5 bg-noir/60 aspect-video flex items-center justify-center">
+                            <img src="img/burguer-screen.png" alt="Burger & Co. Hero Landing"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                            <div
+                                class="absolute top-3 left-3 bg-amber-500/10 backdrop-blur-md border border-amber-500/30 px-3 py-1 rounded-full text-xs text-amber-400 font-mono font-medium">
+                                Landing Page - Hero</div>
+                        </div>
+
+                        <!-- Imagen Secundaria: La sección del Menú Premium -->
+                        <div
+                            class="relative rounded-xl overflow-hidden border border-white/5 bg-noir/60 aspect-video group">
+                            <img src="img/burguer-menu.png" alt="Burger & Co. Menu Grid"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                            <div
+                                class="absolute bottom-3 left-3 bg-noir/80 backdrop-blur-sm px-3 py-1 rounded-md text-xs text-white/40 font-mono">
+                                Sección de Productos</div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Especificaciones del Caso de Estudio -->
+                    <div class="w-full lg:w-1/2 flex flex-col justify-between space-y-6">
+                        <div>
+                            <!-- Título del Proyecto -->
+                            <h2
+                                class="text-2xl sm:text-3xl font-display font-bold text-white mb-3 tracking-tight">
+                                Burger & Co. <span class="text-amber-400" data-translate="project1_name">Artisanal Kitchen</span></h2>
+
+                            <!-- 1. PROPÓSITO DEL PROYECTO -->
+                            <div class="mb-4">
+                                <h3
+                                    class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 mb-1" data-translate="project1_purpose_label">
+                                    Propósito</h3>
+                                <p class="text-sm sm:text-base text-white/50 leading-relaxed" data-translate="project1_purpose">
+                                    Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una
+                                    interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del
+                                    contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes
+                                    directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio
+                                    local.
+                                </p>
+                            </div>
+
+                            <!-- 2. DESCRIPCIÓN -->
+                            <div class="mb-4">
+                                <h3
+                                    class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 mb-1" data-translate="project1_desc_label">
+                                    Descripción</h3>
+                                <p class="text-sm text-white/40 leading-relaxed" data-translate="project1_desc">
+                                    Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo,
+                                    utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante.
+                                    La página cuenta con una arquitectura optimizada para la carga ultrarrápida de
+                                    imágenes de comida en alta resolución, secciones de menú categorizadas con precios
+                                    dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado
+                                    con información de contacto directa.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Enlace de navegación -->
+                        <div class="pt-2">
+                                <span class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white/30 text-sm font-medium px-5 py-2.5 rounded-full cursor-default">
+                                <span data-translate="project1_cta">Próximamente</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Aquí puedes duplicar el bloque de arriba (<article>) para agregar más proyectos -->
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ================================================================ -->
+    <!-- FOOTER -->
+    <!-- ================================================================ -->
+    <footer class="relative border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-3">
+                    <span class="text-xs font-mono text-white/20 tracking-wider">ANURDWEB // &copy; 2026</span>
+                    <span class="text-white/10 hidden sm:inline">|</span>
+                    <span class="text-xs text-white/15 tracking-wide">BUILT FOR PERFORMANCE.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-5">
+                    <a href="https://www.instagram.com/soyanurdweb" target="_blank" rel="noopener noreferrer"
+                        class="text-white/20 hover:text-cyan-400 transition-colors duration-300" aria-label="Instagram">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="mailto:programar2026web@gmail.com"
+                        class="text-white/20 hover:text-cyan-400 transition-colors duration-300" aria-label="Email">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Legal Links -->
+            <div
+                class="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <a href="politica-privacidad.html"
+                    class="text-[13px] text-white/60 hover:text-cyan-400 transition-colors duration-300 tracking-wide underline underline-offset-4 decoration-white/20 hover:decoration-cyan-400/50">Política
+                    de Privacidad</a>
+                <span class="text-white/20 hidden sm:inline text-xs">|</span>
+                <a href="terminos-condiciones.html"
+                    class="text-[13px] text-white/60 hover:text-cyan-400 transition-colors duration-300 tracking-wide underline underline-offset-4 decoration-white/20 hover:decoration-cyan-400/50">Términos
+                    y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            'use strict';
+
+            const translations = {
+                es: {
+                    nav_back: 'Volver al Inicio',
+                    projects_label: 'Portafolio',
+                    projects_title_1: 'Proyectos &',
+                    projects_title_2: 'Casos de Estudio',
+                    projects_subtitle: 'Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales que he construido.',
+                    project1_name: 'Artisanal Kitchen',
+                    project1_purpose_label: 'Propósito',
+                    project1_purpose: 'Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio local.',
+                    project1_desc_label: 'Descripción',
+                    project1_desc: 'Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado con información de contacto directa.',
+                    project1_cta: 'Próximamente'
+                },
+                en: {
+                    nav_back: 'Back to Home',
+                    projects_label: 'Portfolio',
+                    projects_title_1: 'Projects &',
+                    projects_title_2: 'Case Studies',
+                    projects_subtitle: 'A detailed look at the code, architecture, and purpose behind the digital solutions I have built.',
+                    project1_name: 'Artisanal Kitchen',
+                    project1_purpose_label: 'Purpose',
+                    project1_purpose: 'To digitize the experience of a gourmet burger restaurant through a high-end web interface. The main goal is to captivate the user through visual content, structure a fluid interactive menu, and simulate a direct ordering flow ("Order Now") focused on driving conversions and sales for the local business.',
+                    project1_desc_label: 'Description',
+                    project1_desc: 'Premium web design developed under a deep dark mode aesthetic, using orange and gold tones to accentuate the restaurant\'s branding. The page features an architecture optimized for ultra-fast loading of high-resolution food images, categorized menu sections with dynamic pricing, an ingredient quality control block, and an adapted footer with direct contact information.',
+                    project1_cta: 'Coming Soon'
+                }
+            };
+
+            let currentLang = localStorage.getItem('anurdweb_lang') || 'es';
+
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('anurdweb_lang', lang);
+
+                document.querySelectorAll('[data-translate]').forEach(el => {
+                    const key = el.getAttribute('data-translate');
+                    if (translations[lang][key]) {
+                        el.textContent = translations[lang][key];
+                    }
+                });
+
+                document.getElementById('langText').textContent = lang === 'es' ? 'EN' : 'ES';
+                document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+            }
+
+            setLanguage(currentLang);
+
+            document.getElementById('langToggle').addEventListener('click', () => {
+                setLanguage(currentLang === 'es' ? 'en' : 'es');
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
