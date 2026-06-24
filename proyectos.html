@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-[#0A0A0A] text-white relative min-h-screen">
+<body class="bg-[#0A0A0A] text-white relative">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV8DN95W" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -59,9 +59,9 @@
     <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
 
     <!-- ===== GIANT AMBIENT LIGHT SPHERES ===== -->
-    <div class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] absolute top-[15%] left-[-15%] pointer-events-none z-0"></div>
-    <div class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] absolute top-[55%] right-[-20%] pointer-events-none z-0"></div>
-    <div class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] absolute top-[80%] left-[10%] pointer-events-none z-0"></div>
+    <div class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] fixed top-[15%] left-[-15%] pointer-events-none z-0"></div>
+    <div class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] fixed top-[55%] right-[-20%] pointer-events-none z-0"></div>
+    <div class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] fixed top-[80%] left-[10%] pointer-events-none z-0"></div>
 
     <!-- ================================================================ -->
     <!-- NAVBAR -->
@@ -139,7 +139,7 @@
     <!-- ================================================================ -->
     <!-- MAIN CONTENT -->
     <!-- ================================================================ -->
-    <main class="relative z-10 pt-28 pb-20">
+    <main class="relative z-10 pt-28 pb-12">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Encabezado de la Sección -->
@@ -248,7 +248,7 @@
         <div id="modalOverlay" class="absolute inset-0 bg-noir/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
         
         <!-- Panel Lateral -->
-        <div id="modalPanel" class="absolute right-0 top-0 h-full w-full sm:w-[520px] bg-noir-light border-l border-white/5 shadow-2xl transform translate-x-full transition-transform duration-400 ease-out">
+        <div id="modalPanel" class="absolute right-0 top-0 h-full w-full sm:w-[520px] bg-noir-light border-l border-white/5 shadow-2xl transform translate-x-full transition-transform duration-400 ease-out flex flex-col">
             
             <!-- Header del Modal -->
             <div class="sticky top-0 z-10 bg-noir-light/90 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex items-center justify-between">
@@ -268,7 +268,7 @@
             </div>
 
             <!-- Contenido del Modal (scrollable) -->
-            <div class="overflow-y-auto h-[calc(100vh-65px)] px-6 py-6">
+            <div class="overflow-y-auto flex-1 px-6 py-6">
                 <!-- Galería de Imágenes -->
                 <div class="flex flex-col gap-3 mb-6">
                     <div class="relative rounded-xl overflow-hidden border border-white/5 bg-noir aspect-video">
@@ -376,7 +376,7 @@
     <!-- ================================================================ -->
     <!-- FOOTER -->
     <!-- ================================================================ -->
-    <footer class="relative border-t border-white/5 py-12">
+    <footer class="relative border-t border-white/5 py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-3">
@@ -407,7 +407,7 @@
             </div>
             <!-- Legal Links -->
             <div
-                class="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                class="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <a href="politica-privacidad.html"
                     class="text-[13px] text-white/60 hover:text-cyan-400 transition-colors duration-300 tracking-wide underline underline-offset-4 decoration-white/20 hover:decoration-cyan-400/50">Política
                     de Privacidad</a>

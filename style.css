@@ -19,8 +19,13 @@ html, body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     max-width: 100%;
-    position: relative;
     width: 100%;
+}
+
+body {
+    position: relative;
+    /* Blobs absolutos no deben agrandar la página */
+    overflow-x: hidden;
 }
 
 /* ===== CUSTOM SCROLLBAR ===== */
