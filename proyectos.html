@@ -51,17 +51,28 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- ===== FLOATING BACKGROUND BLOBS ===== -->
-    <div class="blob w-[500px] h-[500px] bg-cyan-500 opacity-[0.04] top-[-100px] left-[-200px] fixed z-0"></div>
-    <div class="blob w-[400px] h-[400px] bg-emerald-500 opacity-[0.03] bottom-[10%] right-[-150px] fixed z-0"></div>
-    <div class="blob w-[350px] h-[350px] bg-cyan-400 opacity-[0.03] top-[50%] left-[30%] fixed z-0"></div>
+    <div
+        class="blob w-[500px] h-[500px] bg-cyan-500 opacity-[0.04] top-[-100px] left-[-200px] fixed z-0 pointer-events-none">
+    </div>
+    <div
+        class="blob w-[400px] h-[400px] bg-emerald-500 opacity-[0.03] bottom-[10%] right-[-150px] fixed z-0 pointer-events-none">
+    </div>
+    <div class="blob w-[350px] h-[350px] bg-cyan-400 opacity-[0.03] top-[50%] left-[30%] fixed z-0 pointer-events-none">
+    </div>
 
     <!-- ===== GRID PATTERN OVERLAY ===== -->
     <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
 
     <!-- ===== GIANT AMBIENT LIGHT SPHERES ===== -->
-    <div class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] fixed top-[15%] left-[-15%] pointer-events-none z-0"></div>
-    <div class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] fixed top-[55%] right-[-20%] pointer-events-none z-0"></div>
-    <div class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] fixed top-[80%] left-[10%] pointer-events-none z-0"></div>
+    <div
+        class="blob w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-cyan-500/5 rounded-full blur-[130px] fixed top-[15%] left-[-15%] pointer-events-none z-0">
+    </div>
+    <div
+        class="blob w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-[150px] fixed top-[55%] right-[-20%] pointer-events-none z-0">
+    </div>
+    <div
+        class="blob w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-purple-500/5 rounded-full blur-[140px] fixed top-[80%] left-[10%] pointer-events-none z-0">
+    </div>
 
     <!-- ================================================================ -->
     <!-- NAVBAR -->
@@ -69,7 +80,8 @@
     <header class="nav-glass fixed top-0 left-0 right-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Logo -->
-            <a href="index.html" class="text-xl font-display font-bold tracking-tight nav-logo transition-all duration-300">
+            <a href="index.html"
+                class="text-xl font-display font-bold tracking-tight nav-logo transition-all duration-300">
                 <span class="gradient-text-mixed">AnurD</span><span class="text-white/80">web</span>
             </a>
 
@@ -78,7 +90,8 @@
                 <a href="index.html"
                     class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Inicio</a>
                 <a href="sobre-mi.html"
-                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Sobre Mí</a>
+                    class="nav-link text-sm font-medium text-white/50 hover:text-accent-400 transition-colors duration-300 relative">Sobre
+                    Mí</a>
                 <a href="proyectos.html"
                     class="nav-link text-sm font-medium text-accent-400 transition-colors duration-300 relative">Proyectos</a>
                 <a href="index.html#contact"
@@ -144,26 +157,33 @@
 
             <!-- Encabezado de la Sección -->
             <div class="mb-16">
-                <span class="inline-block text-xs font-mono text-cyan-400 uppercase tracking-[0.3em] mb-4" data-translate="projects_label">Portafolio</span>
+                <span class="inline-block text-xs font-mono text-cyan-400 uppercase tracking-[0.3em] mb-4"
+                    data-translate="projects_label">Portafolio</span>
                 <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-4">
-                    <span data-translate="projects_title_1">Proyectos &</span> <span class="gradient-text-cyan" data-translate="projects_title_2">Casos de Estudio</span>
+                    <span data-translate="projects_title_1">Proyectos &</span> <span class="gradient-text-cyan"
+                        data-translate="projects_title_2">Casos de Estudio</span>
                 </h1>
-                <p class="text-base sm:text-lg text-white/40 max-w-2xl font-light" data-translate="projects_subtitle">Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales que he construido.</p>
+                <p class="text-base sm:text-lg text-white/40 max-w-2xl font-light" data-translate="projects_subtitle">
+                    Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales
+                    que he construido.</p>
             </div>
 
             <!-- ===== GRID DE PROYECTOS MINIMALISTA ===== -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
                 <!-- ===== TARJETA: BURGER & CO. ===== -->
-                <article class="project-card group glass rounded-2xl border border-white/5 hover:border-accent-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                <article
+                    class="project-card group glass rounded-2xl border border-white/5 hover:border-accent-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
                     data-project="burger">
                     <!-- Imagen -->
                     <div class="relative overflow-hidden aspect-[16/10]">
                         <img src="img/burguer-screen.png" alt="Burger & Co."
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent">
+                        </div>
                         <!-- Badge -->
-                        <span class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-400">
+                        <span
+                            class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-400">
                             Landing Page
                         </span>
                     </div>
@@ -172,24 +192,66 @@
                         <h3 class="font-display font-bold text-white/90 text-lg mb-1.5 tracking-tight">
                             Burger & Co. <span class="text-accent-400">Artisanal Kitchen</span>
                         </h3>
-                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4" data-translate="project1_short">
+                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4"
+                            data-translate="project1_short">
                             Experiencia web gourmet con menú interactivo, diseño premium y flujo de órdenes directo.
                         </p>
-                        <button type="button" class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
+                        <button type="button"
+                            class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
                             data-translate="project_view">
                             Ver Proyecto
-                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </button>
                     </div>
                 </article>
 
-                <!-- ===== TARJETA: PRÓXIMAMENTE 1 ===== -->
-                <article class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
+                <!-- ===== TARJETA: SOULMOTION ===== -->
+                <article
+                    class="project-card group glass rounded-2xl border border-white/5 hover:border-accent-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                    data-project="soulmotion">
+                    <!-- Imagen -->
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="img/landing.jpeg" alt="SoulMotion"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent">
+                        </div>
+                        <!-- Badge -->
+                        <span
+                            class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                            Plataforma Digital
+                        </span>
+                    </div>
+                    <!-- Contenido -->
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/90 text-lg mb-1.5 tracking-tight">
+                            Soul<span class="text-cyan-400">Motion</span>
+                        </h3>
+                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4"
+                            data-translate="project2_short">
+                            Plataforma de rehabilitación con diseño paramétrico 3D y asistente de IA emocional.
+                        </p>
+                        <button type="button"
+                            class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
+                            data-translate="project_view">
+                            Ver Proyecto
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </article>
+                <article
+                    class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
                     <div class="relative overflow-hidden aspect-[16/10] bg-white/5 flex items-center justify-center">
                         <svg class="w-12 h-12 text-white/10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                         </svg>
                     </div>
                     <div class="p-5">
@@ -203,10 +265,12 @@
                 </article>
 
                 <!-- ===== TARJETA: PRÓXIMAMENTE 2 ===== -->
-                <article class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
+                <article
+                    class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
                     <div class="relative overflow-hidden aspect-[16/10] bg-white/5 flex items-center justify-center">
                         <svg class="w-12 h-12 text-white/10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                         </svg>
                     </div>
                     <div class="p-5">
@@ -220,10 +284,12 @@
                 </article>
 
                 <!-- ===== TARJETA: PRÓXIMAMENTE 3 ===== -->
-                <article class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
+                <article
+                    class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
                     <div class="relative overflow-hidden aspect-[16/10] bg-white/5 flex items-center justify-center">
                         <svg class="w-12 h-12 text-white/10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                         </svg>
                     </div>
                     <div class="p-5">
@@ -245,24 +311,32 @@
     <!-- ================================================================ -->
     <div id="projectModal" class="fixed inset-0 z-[100] hidden">
         <!-- Overlay -->
-        <div id="modalOverlay" class="absolute inset-0 bg-noir/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-        
+        <div id="modalOverlay"
+            class="absolute inset-0 bg-noir/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+
         <!-- Panel Lateral -->
-        <div id="modalPanel" class="absolute right-0 top-0 h-full w-full sm:w-[520px] bg-noir-light border-l border-white/5 shadow-2xl transform translate-x-full transition-transform duration-400 ease-out flex flex-col">
-            
+        <div id="modalPanel"
+            class="absolute right-0 top-0 h-full w-full sm:w-[520px] bg-[#111111] border-l border-white/5 shadow-2xl transform translate-x-full transition-transform duration-500 ease-out flex flex-col">
+
             <!-- Header del Modal -->
-            <div class="sticky top-0 z-10 bg-noir-light/90 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex items-center justify-between">
+            <div
+                class="sticky top-0 z-10 bg-[#111111]/90 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-accent-500/10 flex items-center justify-center">
+                    <div id="modalHeaderIcon"
+                        class="w-8 h-8 rounded-lg bg-accent-500/10 flex items-center justify-center">
                         <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                     </div>
-                    <span class="text-xs font-mono text-white/60 uppercase tracking-wider" data-translate="modal_title">Detalles</span>
+                    <span class="text-xs font-mono text-white/60 uppercase tracking-wider"
+                        data-translate="modal_title">Detalles</span>
                 </div>
-                <button id="closeModal" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-200">
+                <button id="closeModal"
+                    class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-200">
                     <svg class="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -282,7 +356,8 @@
                 </div>
 
                 <!-- Badge de Categoría -->
-                <span id="modalCategory" class="inline-block px-3 py-1.5 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-400 mb-4">
+                <span id="modalCategory"
+                    class="inline-block px-3 py-1.5 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-400 mb-4">
                     Landing Page
                 </span>
 
@@ -293,58 +368,82 @@
 
                 <!-- Propósito -->
                 <div class="mb-5">
-                    <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-accent-400 mb-2" data-translate="modal_purpose">
+                    <h3 id="modalPurposeTitle"
+                        class="text-xs font-mono font-semibold uppercase tracking-wider text-accent-400 mb-2"
+                        data-translate="modal_purpose">
                         Propósito
                     </h3>
                     <p id="modalPurpose" class="text-sm text-white/50 leading-relaxed">
-                        Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio local.
+                        Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web
+                        de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual,
+                        estructurar un menú interactivo fluido y simular un flujo de ordenes directo ("Pide Ahora")
+                        enfocado en disparar las conversiones y ventas del negocio local.
                     </p>
                 </div>
 
                 <!-- Descripción -->
                 <div class="mb-6">
-                    <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-accent-400 mb-2" data-translate="modal_description">
+                    <h3 id="modalDescTitle"
+                        class="text-xs font-mono font-semibold uppercase tracking-wider text-accent-400 mb-2"
+                        data-translate="modal_description">
                         Descripción
                     </h3>
                     <p id="modalDescription" class="text-sm text-white/50 leading-relaxed">
-                        Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado con información de contacto directa.
+                        Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando
+                        contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta
+                        con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta
+                        resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de
+                        calidad de ingredientes y un pie de página adaptado con información de contacto directa.
                     </p>
                 </div>
 
                 <!-- Características Clave -->
                 <div class="mb-8">
-                    <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-white/60 mb-3" data-translate="modal_features">
+                    <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-white/60 mb-3"
+                        data-translate="modal_features">
                         Características Clave
                     </h3>
                     <ul id="modalFeatures" class="flex flex-col gap-2.5">
                         <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M5 13l4 4L19 7" />
                                 </svg>
                             </span>
                             <span class="text-sm text-white/50">Diseño premium modo oscuro</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M5 13l4 4L19 7" />
                                 </svg>
                             </span>
                             <span class="text-sm text-white/50">Menú interactivo con precios dinámicos</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M5 13l4 4L19 7" />
                                 </svg>
                             </span>
                             <span class="text-sm text-white/50">Flujo de órdenes "Pide Ahora"</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M5 13l4 4L19 7" />
                                 </svg>
                             </span>
                             <span class="text-sm text-white/50">Imágenes optimizadas en alta resolución</span>
@@ -353,9 +452,11 @@
                 </div>
 
                 <!-- Botón Ver Proyecto (Próximamente) -->
-                <button id="modalDemoBtn" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white/40 font-bold text-sm tracking-wide hover:bg-white/10 hover:text-white/50 hover:border-white/20 transition-all duration-300 cursor-pointer">
+                <button id="modalDemoBtn"
+                    class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white/40 font-bold text-sm tracking-wide hover:bg-white/10 hover:text-white/50 hover:border-white/20 transition-all duration-300 cursor-pointer">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     <span data-translate="modal_demo">Ver Proyecto</span>
                     <span class="text-[10px] font-mono opacity-60">•</span>
@@ -366,11 +467,14 @@
     </div>
 
     <!-- Toast de Próximamente (fuera del modal) -->
-    <div id="soonToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] px-5 py-3 rounded-xl bg-noir-light border border-accent-500/20 shadow-xl shadow-accent-500/10 flex items-center gap-3 opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
+    <div id="soonToast"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] px-5 py-3 rounded-xl bg-noir-light border border-accent-500/20 shadow-xl shadow-accent-500/10 flex items-center gap-3 opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
         <svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <span class="text-sm text-white/70 font-medium" data-translate="toast_soon">Este proyecto estará disponible pronto</span>
+        <span class="text-sm text-white/70 font-medium" data-translate="toast_soon">Este proyecto estará disponible
+            pronto</span>
     </div>
 
     <!-- ================================================================ -->
@@ -420,229 +524,250 @@
     </footer>
 
     <script>
-        (function () {
-            'use strict';
+            (function () {
+                'use strict';
 
-            // ===== DATOS DE PROYECTOS =====
-            const projectsData = {
-                burger: {
-                    img1: 'img/burguer-screen.png',
-                    img2: 'img/burguer-menu.png',
-                    category: { es: 'Landing Page', en: 'Landing Page' },
-                    name: 'Burger & Co. <span class="text-accent-400">Artisanal Kitchen</span>',
-                    purpose: {
-                        es: 'Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio local.',
-                        en: 'To digitize the experience of a gourmet burger restaurant through a high-end web interface. The main goal is to captivate the user through visual content, structure a fluid interactive menu, and simulate a direct ordering flow ("Order Now") focused on driving conversions and sales for the local business.'
+                var projectsData = {
+                    burger: {
+                        img1: 'img/burguer-screen.png',
+                        img2: 'img/burguer-menu.png',
+                        category: { es: 'Landing Page', en: 'Landing Page' },
+                        name: 'Burger & Co. <span class="text-accent-400">Artisanal Kitchen</span>',
+                        colors: {
+                            header: 'bg-accent-500/10',
+                            headerIcon: 'text-accent-400',
+                            sectionTitle: 'text-accent-400',
+                            checkmark: 'bg-accent-500/10',
+                            checkIcon: 'text-accent-400',
+                            btn: 'bg-gradient-to-r from-accent-500 to-accent-600 text-noir shadow-accent-500/20'
+                        },
+                        purpose: {
+                            es: 'Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual, estructurar un menú interactivo fluido y simular un flujo de ordenes directo ("Pide Ahora") enfocado en disparar las conversiones y ventas del negocio local.',
+                            en: 'To digitize the experience of a gourmet burger restaurant through a high-end web interface. The main goal is to captivate the user through visual content, structure a fluid interactive menu, and simulate a direct ordering flow ("Order Now") focused on driving conversions and sales for the local business.'
+                        },
+                        description: {
+                            es: 'Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado con información de contacto directa.',
+                            en: 'Premium web design developed under a deep dark mode aesthetic, using orange and gold tones to accentuate the restaurant\'s branding. The page features an architecture optimized for ultra-fast loading of high-resolution food images, categorized menu sections with dynamic pricing, an ingredient quality control block, and an adapted footer with direct contact information.'
+                        },
+                        features: {
+                            es: ['Diseño premium modo oscuro', 'Menú interactivo con precios dinámicos', 'Flujo de órdenes "Pide Ahora"', 'Imágenes optimizadas en alta resolución'],
+                            en: ['Premium dark mode design', 'Interactive menu with dynamic pricing', '"Order Now" ordering flow', 'Optimized high-resolution images']
+                        },
+                        demo: '#'
                     },
-                    description: {
-                        es: 'Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado con información de contacto directa.',
-                        en: 'Premium web design developed under a deep dark mode aesthetic, using orange and gold tones to accentuate the restaurant\'s branding. The page features an architecture optimized for ultra-fast loading of high-resolution food images, categorized menu sections with dynamic pricing, an ingredient quality control block, and an adapted footer with direct contact information.'
-                    },
-                    features: {
-                        es: ['Diseño premium modo oscuro', 'Menú interactivo con precios dinámicos', 'Flujo de órdenes "Pide Ahora"', 'Imágenes optimizadas en alta resolución'],
-                        en: ['Premium dark mode design', 'Interactive menu with dynamic pricing', '"Order Now" ordering flow', 'Optimized high-resolution images']
-                    },
-                    demo: '#'
-                }
-            };
-
-            // ===== TRADUCCIONES =====
-            const translations = {
-                es: {
-                    nav_back: 'Volver al Inicio',
-                    projects_label: 'Portafolio',
-                    projects_title_1: 'Proyectos &',
-                    projects_title_2: 'Casos de Estudio',
-                    projects_subtitle: 'Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales que he construido.',
-                    project1_short: 'Experiencia web gourmet con menú interactivo, diseño premium y flujo de órdenes directo.',
-                    project_view: 'Ver Proyecto',
-                    modal_title: 'Detalles',
-                    modal_purpose: 'Propósito',
-                    modal_description: 'Descripción',
-                    modal_features: 'Características Clave',
-                    modal_demo: 'Ver Proyecto',
-                    modal_soon: 'Próximamente',
-                    toast_soon: 'Este proyecto estará disponible pronto'
-                },
-                en: {
-                    nav_back: 'Back to Home',
-                    projects_label: 'Portfolio',
-                    projects_title_1: 'Projects &',
-                    projects_title_2: 'Case Studies',
-                    projects_subtitle: 'A detailed look at the code, architecture, and purpose behind the digital solutions I have built.',
-                    project1_short: 'Gourmet web experience with interactive menu, premium design and direct ordering flow.',
-                    project_view: 'View Project',
-                    modal_title: 'Details',
-                    modal_purpose: 'Purpose',
-                    modal_description: 'Description',
-                    modal_features: 'Key Features',
-                    modal_demo: 'View Project',
-                    modal_soon: 'Coming Soon',
-                    toast_soon: 'This project will be available soon'
-                }
-            };
-
-            let currentLang = localStorage.getItem('anurdweb_lang') || 'es';
-
-            // ===== SISTEMA DE IDIOMAS =====
-            function setLanguage(lang) {
-                currentLang = lang;
-                localStorage.setItem('anurdweb_lang', lang);
-
-                document.querySelectorAll('[data-translate]').forEach(el => {
-                    const key = el.getAttribute('data-translate');
-                    if (translations[lang][key]) {
-                        el.textContent = translations[lang][key];
+                    soulmotion: {
+                        img1: 'img/landing.jpeg',
+                        img2: 'img/sesion.jpeg',
+                        category: { es: 'Plataforma Digital', en: 'Digital Platform' },
+                        name: 'Soul<span class="text-cyan-400">Motion</span>',
+                        colors: {
+                            header: 'bg-cyan-500/10',
+                            headerIcon: 'text-cyan-400',
+                            sectionTitle: 'text-cyan-400',
+                            checkmark: 'bg-cyan-500/10',
+                            checkIcon: 'text-cyan-400',
+                            btn: 'bg-gradient-to-r from-cyan-500 to-cyan-600 text-noir shadow-cyan-500/20'
+                        },
+                        purpose: {
+                            es: 'SoulMotion surge como una solución tecnológica integral diseñada para transformar el proceso de rehabilitación física y emocional. Su objetivo principal es democratizar el acceso a prótesis personalizadas de alta precisión mediante herramientas de diseño paramétrico, mientras ofrece un acompañamiento emocional continuo a través de inteligencia artificial, garantizando que el usuario se sienta respaldado técnica y psicológicamente durante todo su proceso de adaptación.',
+                            en: 'SoulMotion emerges as a comprehensive technological solution designed to transform the physical and emotional rehabilitation process. Its main goal is to democratize access to high-precision personalized prosthetics through parametric design tools, while providing continuous emotional support through artificial intelligence, ensuring the user feels technically and psychologically supported throughout their adaptation process.'
+                        },
+                        description: {
+                            es: 'SoulMotion es una plataforma avanzada que combina el diseño industrial con el desarrollo de software de vanguardia. La aplicación actúa como un laboratorio digital donde los usuarios pueden gestionar el diseño de dispositivos biónicos, integrando herramientas de renderizado 3D y generación automatizada de documentación técnica para su fabricación. Además, incluye un asistente de IA especializado que actúa como un soporte emocional y técnico, adaptándose a las necesidades individuales del paciente y permitiendo una gestión eficiente y humana de la rehabilitación.',
+                            en: 'SoulMotion is an advanced platform that combines industrial design with cutting-edge software development. The application acts as a digital laboratory where users can manage the design of bionic devices, integrating 3D rendering tools and automated generation of technical documentation for manufacturing. It also includes a specialized AI assistant that serves as emotional and technical support, adapting to the individual needs of the patient and enabling efficient and humane rehabilitation management.'
+                        },
+                        features: {
+                            es: ['Laboratorio de Diseño 3D', 'Mind IA — Asistente', 'Generación de Fichas Técnicas Automatizadas', 'Ecosistema de Comunidad y Especialistas'],
+                            en: ['3D Design Laboratory', 'Mind AI — Assistant', 'Automated Technical Sheet Generation', 'Community & Specialists Ecosystem']
+                        },
+                        demo: 'https://soulmotion.vercel.app/'
                     }
-                });
+                };
 
-                const langES = document.getElementById('langES');
-                const langEN = document.getElementById('langEN');
-                if (langES && langEN) {
-                    langES.classList.toggle('active', lang === 'es');
-                    langEN.classList.toggle('active', lang === 'en');
-                }
-
-                document.documentElement.lang = lang === 'es' ? 'es' : 'en';
-            }
-
-            setLanguage(currentLang);
-
-            document.getElementById('langES').addEventListener('click', () => setLanguage('es'));
-            document.getElementById('langEN').addEventListener('click', () => setLanguage('en'));
-
-            const langESMobile = document.getElementById('langESMobile');
-            const langENMobile = document.getElementById('langENMobile');
-            if (langESMobile && langENMobile) {
-                langESMobile.addEventListener('click', () => setLanguage('es'));
-                langENMobile.addEventListener('click', () => setLanguage('en'));
-            }
-
-            // ===== HAMBURGER MENU =====
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
-
-            function toggleMenu() {
-                hamburgerBtn.classList.toggle('open');
-                mobileMenu.classList.toggle('open');
-                document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-            }
-
-            hamburgerBtn.addEventListener('click', toggleMenu);
-            hamburgerBtn.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (mobileMenu.classList.contains('open')) toggleMenu();
-                });
-            });
-
-            // ===== MODAL DE PROYECTOS =====
-            const modal = document.getElementById('projectModal');
-            const overlay = document.getElementById('modalOverlay');
-            const panel = document.getElementById('modalPanel');
-            const closeBtn = document.getElementById('closeModal');
-
-            function openModal(projectId) {
-                const project = projectsData[projectId];
-                if (!project) return;
-
-                // Llenar contenido del modal
-                document.getElementById('modalImg1').src = project.img1;
-                document.getElementById('modalImg2').src = project.img2;
-                document.getElementById('modalCategory').textContent = project.category[currentLang];
-                document.getElementById('modalName').innerHTML = project.name;
-                document.getElementById('modalPurpose').textContent = project.purpose[currentLang];
-                document.getElementById('modalDescription').textContent = project.description[currentLang];
-
-                // Características
-                const featuresList = document.getElementById('modalFeatures');
-                featuresList.innerHTML = project.features[currentLang].map(f => `
-                    <li class="flex items-center gap-3">
-                        <span class="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </span>
-                        <span class="text-sm text-white/50">${f}</span>
-                    </li>
-                `).join('');
-
-                // Mostrar modal
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-
-                requestAnimationFrame(() => {
-                    overlay.classList.remove('opacity-0');
-                    overlay.classList.add('opacity-100');
-                    panel.classList.remove('translate-x-full');
-                    panel.classList.add('translate-x-0');
-                });
-            }
-
-            function closeModal() {
-                overlay.classList.remove('opacity-100');
-                overlay.classList.add('opacity-0');
-                panel.classList.remove('translate-x-0');
-                panel.classList.add('translate-x-full');
-
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = '';
-                }, 400);
-            }
-
-            // Eventos del modal
-            closeBtn.addEventListener('click', closeModal);
-            overlay.addEventListener('click', closeModal);
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                    closeModal();
-                }
-            });
-
-            // Eventos de tarjetas de proyecto
-            document.querySelectorAll('.project-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    // Si el click fue en el botón "Ver Proyecto", no hacer nada (el botón ya maneja su toast)
-                    if (e.target.closest('.open-project-btn')) return;
-                    const projectId = card.getAttribute('data-project');
-                    openModal(projectId);
-                });
-            });
-
-            // Evento del botón "Ver Proyecto" dentro de las tarjetas
-            document.querySelectorAll('.open-project-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const card = btn.closest('.project-card');
-                    if (card) {
-                        const projectId = card.getAttribute('data-project');
-                        openModal(projectId);
+                var translations = {
+                    es: {
+                        projects_label: 'Portafolio',
+                        projects_title_1: 'Proyectos &',
+                        projects_title_2: 'Casos de Estudio',
+                        projects_subtitle: 'Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales que he construido.',
+                        project1_short: 'Experiencia web gourmet con menú interactivo, diseño premium y flujo de órdenes directo.',
+                        project2_short: 'Plataforma de rehabilitación con diseño paramétrico 3D y asistente de IA emocional.',
+                        project_view: 'Ver Proyecto',
+                        modal_title: 'Detalles',
+                        modal_purpose: 'Propósito',
+                        modal_description: 'Descripción',
+                        modal_features: 'Características Clave',
+                        modal_demo: 'Ver Proyecto',
+                        modal_soon: 'Próximamente',
+                        toast_soon: 'Este proyecto estará disponible pronto'
+                    },
+                    en: {
+                        projects_label: 'Portfolio',
+                        projects_title_1: 'Projects &',
+                        projects_title_2: 'Case Studies',
+                        projects_subtitle: 'A detailed look at the code, architecture, and purpose behind the digital solutions I have built.',
+                        project1_short: 'Gourmet web experience with interactive menu, premium design and direct ordering flow.',
+                        project2_short: 'Rehabilitation platform with 3D parametric design and emotional AI assistant.',
+                        project_view: 'View Project',
+                        modal_title: 'Details',
+                        modal_purpose: 'Purpose',
+                        modal_description: 'Description',
+                        modal_features: 'Key Features',
+                        modal_demo: 'View Project',
+                        modal_soon: 'Coming Soon',
+                        toast_soon: 'This project will be available soon'
                     }
+                };
+
+                var currentLang = localStorage.getItem('anurdweb_lang') || 'es';
+
+                function setLanguage(lang) {
+                    currentLang = lang;
+                    localStorage.setItem('anurdweb_lang', lang);
+                    document.querySelectorAll('[data-translate]').forEach(function (el) {
+                        var key = el.getAttribute('data-translate');
+                        if (translations[lang] && translations[lang][key]) {
+                            el.textContent = translations[lang][key];
+                        }
+                    });
+                    var langES = document.getElementById('langES');
+                    var langEN = document.getElementById('langEN');
+                    if (langES && langEN) {
+                        langES.classList.toggle('active', lang === 'es');
+                        langEN.classList.toggle('active', lang === 'en');
+                    }
+                    document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+                }
+
+                setLanguage(currentLang);
+
+                document.getElementById('langES').addEventListener('click', function () { setLanguage('es'); });
+                document.getElementById('langEN').addEventListener('click', function () { setLanguage('en'); });
+
+                var langESMobile = document.getElementById('langESMobile');
+                var langENMobile = document.getElementById('langENMobile');
+                if (langESMobile && langENMobile) {
+                    langESMobile.addEventListener('click', function () { setLanguage('es'); });
+                    langENMobile.addEventListener('click', function () { setLanguage('en'); });
+                }
+
+                var hamburgerBtn = document.getElementById('hamburgerBtn');
+                var mobileMenu = document.getElementById('mobileMenu');
+                var mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+
+                function toggleMenu() {
+                    hamburgerBtn.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburgerBtn.addEventListener('click', toggleMenu);
+                hamburgerBtn.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
                 });
-            });
+                mobileLinks.forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        if (mobileMenu.classList.contains('open')) toggleMenu();
+                    });
+                });
 
-            // ===== TOAST "PRÓXIMAMENTE" =====
-            const modalDemoBtn = document.getElementById('modalDemoBtn');
-            const soonToast = document.getElementById('soonToast');
-            let toastTimeout;
+                var modal = document.getElementById('projectModal');
+                var overlay = document.getElementById('modalOverlay');
+                var panel = document.getElementById('modalPanel');
+                var closeBtn = document.getElementById('closeModal');
+                var soonToast = document.getElementById('soonToast');
+                var toastTimeout;
 
-            modalDemoBtn.addEventListener('click', () => {
-                clearTimeout(toastTimeout);
-                soonToast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-                soonToast.classList.add('opacity-100', 'translate-y-0');
+                function openModal(projectId) {
+                    var project = projectsData[projectId];
+                    if (!project) return;
 
-                toastTimeout = setTimeout(() => {
-                    soonToast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-                    soonToast.classList.remove('opacity-100', 'translate-y-0');
-                }, 2500);
-            });
-        })();
+                    var c = project.colors;
+
+                    document.getElementById('modalImg1').src = project.img1;
+                    document.getElementById('modalImg2').src = project.img2;
+                    document.getElementById('modalCategory').textContent = project.category[currentLang];
+                    document.getElementById('modalName').innerHTML = project.name;
+                    document.getElementById('modalPurpose').textContent = project.purpose[currentLang];
+                    document.getElementById('modalDescription').textContent = project.description[currentLang];
+
+                    document.getElementById('modalHeaderIcon').className = 'w-8 h-8 rounded-lg ' + c.header + ' flex items-center justify-center';
+                    document.getElementById('modalHeaderIcon').querySelector('svg').setAttribute('class', 'w-4 h-4 ' + c.headerIcon);
+                    document.getElementById('modalPurposeTitle').className = 'text-xs font-mono font-semibold uppercase tracking-wider ' + c.sectionTitle + ' mb-2';
+                    document.getElementById('modalDescTitle').className = 'text-xs font-mono font-semibold uppercase tracking-wider ' + c.sectionTitle + ' mb-2';
+
+                    var featuresHTML = '';
+                    project.features[currentLang].forEach(function (f) {
+                        featuresHTML += '<li class="flex items-center gap-3">';
+                        featuresHTML += '<span class="w-5 h-5 rounded-full ' + c.checkmark + ' flex items-center justify-center flex-shrink-0">';
+                        featuresHTML += '<svg class="w-3 h-3 ' + c.checkIcon + '" fill="none" stroke="currentColor" viewBox="0 0 24 24">';
+                        featuresHTML += '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />';
+                        featuresHTML += '</svg></span>';
+                        featuresHTML += '<span class="text-sm text-white/50">' + f + '</span></li>';
+                    });
+                    document.getElementById('modalFeatures').innerHTML = featuresHTML;
+
+                    var modalDemoBtn = document.getElementById('modalDemoBtn');
+                    if (project.demo && project.demo !== '#') {
+                        modalDemoBtn.className = 'w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl ' + c.btn + ' font-bold text-sm tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer';
+                        modalDemoBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg><span>Ver Proyecto</span>';
+                        modalDemoBtn.onclick = function () { window.open(project.demo, '_blank'); };
+                    } else {
+                        modalDemoBtn.className = 'w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white/40 font-bold text-sm tracking-wide hover:bg-white/10 hover:text-white/50 transition-all duration-300 cursor-pointer';
+                        modalDemoBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg><span>Ver Proyecto</span><span class="text-[10px] font-mono opacity-60">•</span><span class="text-[10px] font-mono opacity-60">' + (currentLang === 'es' ? 'Próximamente' : 'Coming Soon') + '</span>';
+                        modalDemoBtn.onclick = function () {
+                            clearTimeout(toastTimeout);
+                            soonToast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                            soonToast.classList.add('opacity-100', 'translate-y-0');
+                            toastTimeout = setTimeout(function () {
+                                soonToast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                                soonToast.classList.remove('opacity-100', 'translate-y-0');
+                            }, 2500);
+                        };
+                    }
+
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                    requestAnimationFrame(function () {
+                        overlay.classList.remove('opacity-0');
+                        overlay.classList.add('opacity-100');
+                        panel.classList.remove('translate-x-full');
+                        panel.classList.add('translate-x-0');
+                    });
+                }
+
+                function closeModal() {
+                    overlay.classList.remove('opacity-100');
+                    overlay.classList.add('opacity-0');
+                    panel.classList.remove('translate-x-0');
+                    panel.classList.add('translate-x-full');
+                    setTimeout(function () {
+                        modal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }, 400);
+                }
+
+                closeBtn.addEventListener('click', closeModal);
+                overlay.addEventListener('click', closeModal);
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+                });
+
+                document.querySelectorAll('.project-card').forEach(function (card) {
+                    card.addEventListener('click', function (e) {
+                        if (e.target.closest('.open-project-btn')) return;
+                        openModal(card.getAttribute('data-project'));
+                    });
+                });
+
+                document.querySelectorAll('.open-project-btn').forEach(function (btn) {
+                    btn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        var card = btn.closest('.project-card');
+                        if (card) openModal(card.getAttribute('data-project'));
+                    });
+                });
+            })();
     </script>
 
 </body>
