@@ -218,64 +218,22 @@
                 </div>
             </div>
 
-            <!-- Right: Floating Device -->
+            <!-- Right: Profile Image with Fade Effect -->
             <div class="relative flex items-center justify-center lg:justify-end h-[350px] sm:h-[400px] lg:h-[600px]">
                 <!-- Glow Background -->
                 <div
                     class="absolute w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] bg-cyan-500/10 rounded-full blur-[100px]">
                 </div>
 
-                <!-- Device Container -->
-                <div
-                    class="float-device relative w-[240px] h-[330px] sm:w-[280px] sm:h-[380px] lg:w-[320px] lg:h-[440px]">
-                    <!-- Outer Glass Frame -->
-                    <div class="absolute inset-0 rounded-3xl glass-strong border border-cyan-500/20 pulse-glow"></div>
-
-                    <!-- Inner Screen -->
-                    <div
-                        class="absolute inset-3 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-white/5 overflow-hidden">
-                        <div class="absolute inset-0 p-4">
-                            <div class="w-12 h-1 bg-cyan-400/40 rounded-full mb-3"></div>
-                            <div class="w-20 h-1 bg-white/10 rounded-full mb-2"></div>
-                            <div class="w-16 h-1 bg-white/5 rounded-full mb-6"></div>
-                            <div class="grid grid-cols-3 gap-2 mb-4">
-                                <div class="h-12 rounded-lg bg-cyan-500/10 border border-cyan-500/10"></div>
-                                <div class="h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/10"></div>
-                                <div class="h-12 rounded-lg bg-white/5 border border-white/5"></div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="h-1 bg-white/10 rounded-full w-full"></div>
-                                <div class="h-1 bg-white/10 rounded-full w-3/4"></div>
-                                <div class="h-1 bg-white/10 rounded-full w-1/2"></div>
-                            </div>
-                        </div>
-                        <div
-                            class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse">
-                        </div>
-                    </div>
-
-                    <!-- Floating Accent Elements -->
-                    <div
-                        class="absolute -top-4 -right-4 w-16 h-16 rounded-2xl glass border border-cyan-500/20 flex items-center justify-center float-device2">
-                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <div
-                        class="absolute -bottom-3 -left-3 w-12 h-12 rounded-xl glass border border-emerald-500/20 flex items-center justify-center float-device">
-                        <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-
-                    <div class="absolute top-[20%] -left-8 w-1.5 h-1.5 bg-cyan-400/40 rounded-full"
-                        style="animation: particleFloat 4s ease-in-out infinite;"></div>
-                    <div class="absolute top-[60%] -right-6 w-1 h-1 bg-emerald-400/30 rounded-full"
-                        style="animation: particleFloat 5s ease-in-out infinite 1s;"></div>
-                    <div class="absolute bottom-[30%] -left-6 w-1 h-1 bg-cyan-300/30 rounded-full"
-                        style="animation: particleFloat 6s ease-in-out infinite 2s;"></div>
+                <!-- Profile Image with Fade -->
+                <div class="hero-profile-image relative">
+                    <img src="img/sobre-mi.png"
+                        alt="Anuar Díaz - Desarrollador Web"
+                        class="w-full h-full object-cover object-top">
+                    <!-- Fade overlays -->
+                    <div class="hero-fade-left"></div>
+                    <div class="hero-fade-bottom"></div>
+                    <div class="hero-fade-corner"></div>
                 </div>
             </div>
         </div>
