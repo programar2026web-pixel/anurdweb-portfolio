@@ -248,25 +248,45 @@
                         </button>
                     </div>
                 </article>
+                <!-- ===== TARJETA: AURA ESTATE ===== -->
                 <article
-                    class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
-                    <div class="relative overflow-hidden aspect-[16/10] bg-white/5 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-white/10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
+                    class="project-card group glass rounded-2xl border border-white/5 hover:border-accent-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                    data-project="auraestate">
+                    <!-- Imagen -->
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="img/aura.png" alt="Aura Estate"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent">
+                        </div>
+                        <!-- Badge -->
+                        <span
+                            class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                            Portal Inmobiliario
+                        </span>
                     </div>
+                    <!-- Contenido -->
                     <div class="p-5">
-                        <h3 class="font-display font-bold text-white/40 text-lg mb-1.5 tracking-tight">
-                            Próximamente
+                        <h3 class="font-display font-bold text-white/90 text-lg mb-1.5 tracking-tight">
+                            Aura <span class="text-emerald-400">Estate</span>
                         </h3>
-                        <p class="text-sm text-white/20 leading-relaxed">
-                            Nuevo proyecto en desarrollo.
+                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4"
+                            data-translate="project3_short">
+                            Portal inmobiliario de lujo con experiencia visual inmersiva y navegación fluida.
                         </p>
+                        <button type="button"
+                            class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
+                            data-translate="project_view">
+                            Ver Proyecto
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
                     </div>
                 </article>
 
-                <!-- ===== TARJETA: PRÓXIMAMENTE 2 ===== -->
+                <!-- ===== TARJETA: PRÓXIMAMENTE ===== -->
                 <article
                     class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
                     <div class="relative overflow-hidden aspect-[16/10] bg-white/5 flex items-center justify-center">
@@ -583,6 +603,33 @@
                             en: ['3D Design Laboratory', 'Mind AI — Assistant', 'Automated Technical Sheet Generation', 'Community & Specialists Ecosystem']
                         },
                         demo: 'https://soulmotion.vercel.app/'
+                    },
+                    auraestate: {
+                        img1: 'img/aura.png',
+                        img2: 'img/aura 2.png',
+                        category: { es: 'Portal Inmobiliario', en: 'Real Estate Portal' },
+                        name: 'Aura <span class="text-emerald-400">Estate</span>',
+                        colors: {
+                            header: 'bg-emerald-500/10',
+                            headerIcon: 'text-emerald-400',
+                            sectionTitle: 'text-emerald-400',
+                            checkmark: 'bg-emerald-500/10',
+                            checkIcon: 'text-emerald-400',
+                            btn: 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-noir shadow-emerald-500/20'
+                        },
+                        purpose: {
+                            es: 'Aura Estate nace de la necesidad de transformar el sector inmobiliario digital mediante una experiencia visual inmersiva. El objetivo central fue crear una plataforma que no solo sirva como catálogo de propiedades, sino como una herramienta de prestigio para agencias inmobiliarias que buscan posicionar inmuebles de lujo. Resolvemos la brecha entre la información técnica y la conexión emocional del cliente, ofreciendo una navegación fluida, interactiva y sofisticada que mantiene el enfoque absoluto en la exclusividad de cada propiedad.',
+                            en: 'Aura Estate was born from the need to transform the digital real estate sector through an immersive visual experience. The core objective was to create a platform that not only serves as a property catalog but as a prestige tool for real estate agencies looking to position luxury properties. We bridge the gap between technical information and emotional customer connection, offering fluid, interactive, and sophisticated navigation that maintains absolute focus on the exclusivity of each property.'
+                        },
+                        description: {
+                            es: 'Este portal es una solución integral desarrollada bajo una arquitectura de alto rendimiento con React, diseñada para escalar en el mercado de bienes raíces de lujo. Experiencia de Usuario (UX/UI): Implementamos transiciones fluidas y microinteracciones utilizando Framer Motion, logrando que el usuario perciba la elegancia desde el primer clic. Diseño Interactivo: La interfaz utiliza Tailwind CSS para garantizar un diseño minimalista, limpio y moderno, priorizando una jerarquía visual que destaca la calidad de las imágenes y la información clave. Gestión de Datos: La arquitectura permite una navegación eficiente por categorías, permitiendo a los usuarios filtrar y explorar propiedades con una precisión milimétrica, eliminando cualquier fricción en el proceso de búsqueda.',
+                            en: 'This portal is a comprehensive solution developed under a high-performance architecture with React, designed to scale in the luxury real estate market. User Experience (UX/UI): We implemented fluid transitions and microinteractions using Framer Motion, making users perceive elegance from the first click. Interactive Design: The interface uses Tailwind CSS to guarantee a minimalist, clean, and modern design, prioritizing a visual hierarchy that highlights image quality and key information. Data Management: The architecture allows efficient navigation by categories, allowing users to filter and explore properties with pinpoint precision, eliminating any friction in the search process.'
+                        },
+                        features: {
+                            es: ['Arquitectura React de alto rendimiento', 'Transiciones fluidas con Framer Motion', 'Diseño minimalista con Tailwind CSS', 'Navegación eficiente por categorías'],
+                            en: ['High-performance React architecture', 'Fluid transitions with Framer Motion', 'Minimalist design with Tailwind CSS', 'Efficient category navigation']
+                        },
+                        demo: 'https://aura-state.netlify.app/'
                     }
                 };
 
@@ -594,6 +641,7 @@
                         projects_subtitle: 'Una mirada detallada al código, la arquitectura y el propósito detrás de las soluciones digitales que he construido.',
                         project1_short: 'Experiencia web gourmet con menú interactivo, diseño premium y flujo de órdenes directo.',
                         project2_short: 'Plataforma de rehabilitación con diseño paramétrico 3D y asistente de IA emocional.',
+                        project3_short: 'Portal inmobiliario de lujo con experiencia visual inmersiva y navegación fluida.',
                         project_view: 'Ver Proyecto',
                         modal_title: 'Detalles',
                         modal_purpose: 'Propósito',
@@ -610,6 +658,7 @@
                         projects_subtitle: 'A detailed look at the code, architecture, and purpose behind the digital solutions I have built.',
                         project1_short: 'Gourmet web experience with interactive menu, premium design and direct ordering flow.',
                         project2_short: 'Rehabilitation platform with 3D parametric design and emotional AI assistant.',
+                        project3_short: 'Luxury real estate portal with immersive visual experience and fluid navigation.',
                         project_view: 'View Project',
                         modal_title: 'Details',
                         modal_purpose: 'Purpose',
