@@ -286,6 +286,44 @@
                     </div>
                 </article>
 
+                <!-- ===== TARJETA: WILL BEST SOUND ===== -->
+                <article
+                    class="project-card group glass rounded-2xl border border-white/5 hover:border-cyan-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                    data-project="willbestsound">
+                    <!-- Imagen -->
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="img/best1.png" alt="Will Best Sound"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent">
+                        </div>
+                        <!-- Badge -->
+                        <span
+                            class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                            Alquiler de Sonido
+                        </span>
+                    </div>
+                    <!-- Contenido -->
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/90 text-lg mb-1.5 tracking-tight">
+                            Will Best <span class="text-cyan-400">Sound</span>
+                        </h3>
+                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4"
+                            data-translate="project4_short">
+                            Sonido potente con luces LED DMX para fiestas, quinceañeros, casetas y eventos en Barranquilla.
+                        </p>
+                        <button type="button"
+                            class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
+                            data-translate="project_view">
+                            Ver Proyecto
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </article>
+
                 <!-- ===== TARJETA: PRÓXIMAMENTE ===== -->
                 <article
                     class="group glass rounded-2xl border border-white/5 transition-all duration-300 overflow-hidden opacity-50">
@@ -630,6 +668,33 @@
                             en: ['High-performance React architecture', 'Fluid transitions with Framer Motion', 'Minimalist design with Tailwind CSS', 'Efficient category navigation']
                         },
                         demo: 'https://aura-state.netlify.app/'
+                    },
+                    willbestsound: {
+                        img1: 'img/best1.png',
+                        img2: 'img/best 2.png',
+                        category: { es: 'Alquiler de Sonido', en: 'Sound Rental' },
+                        name: 'Will Best <span class="text-cyan-400">Sound</span>',
+                        colors: {
+                            header: 'bg-cyan-500/10',
+                            headerIcon: 'text-cyan-400',
+                            sectionTitle: 'text-cyan-400',
+                            checkmark: 'bg-cyan-500/10',
+                            checkIcon: 'text-cyan-400',
+                            btn: 'bg-gradient-to-r from-cyan-500 to-cyan-600 text-noir shadow-cyan-500/20'
+                        },
+                        purpose: {
+                            es: 'WILL BEST SOUND ofrece sonido potente con excelente calidad y la mejor música para todo tipo de eventos en Barranquilla, Colombia: fiestas, quinceañeros, grados, estaderos, billares, casetas y eventos privados. El Poder del Pickup.',
+                            en: 'WILL BEST SOUND provides powerful, high-quality sound and the best music for all kinds of events in Barranquilla, Colombia: parties, quinceañeras, graduations, beer gardens, pool halls, kiosks, and private events. The Power of the Pickup.'
+                        },
+                        description: {
+                            es: 'Equipo completo de sonido para eventos: torres full potencia, turbos de graves y bajos profundos, iluminación LED & neón con luces DMX, consola y DJ booth El Demonio de Tasmania. Servicio con montaje profesional, puntualidad y respuesta ágil por WhatsApp para fiestas, grados y eventos VIP en la Costa Caribe.',
+                            en: 'Complete event sound system: full-power towers, subwoofers and deep bass, LED & neon lighting with DMX, console and DJ booth. Professional setup, punctuality, and fast WhatsApp response for parties, graduations, and VIP events on the Caribbean Coast.'
+                        },
+                        features: {
+                            es: ['Sonido potente y envolvente de alta resolución', 'Iluminación LED & neón con luces DMX', 'Turbos de graves y bajos profundos', 'Consola & DJ booth — El Demonio de Tasmania'],
+                            en: ['Powerful, high-resolution immersive sound', 'LED & neon lighting with DMX', 'Subwoofers and deep bass', 'Console & DJ booth — The Tasmanian Devil']
+                        },
+                        demo: 'https://willbestsound.netlify.app/'
                     }
                 };
 
@@ -642,6 +707,7 @@
                         project1_short: 'Experiencia web gourmet con menú interactivo, diseño premium y flujo de órdenes directo.',
                         project2_short: 'Plataforma de rehabilitación con diseño paramétrico 3D y asistente de IA emocional.',
                         project3_short: 'Portal inmobiliario de lujo con experiencia visual inmersiva y navegación fluida.',
+                        project4_short: 'Sonido potente con luces LED DMX para fiestas, quinceañeros, casetas y eventos en Barranquilla.',
                         project_view: 'Ver Proyecto',
                         modal_title: 'Detalles',
                         modal_purpose: 'Propósito',
@@ -659,6 +725,7 @@
                         project1_short: 'Gourmet web experience with interactive menu, premium design and direct ordering flow.',
                         project2_short: 'Rehabilitation platform with 3D parametric design and emotional AI assistant.',
                         project3_short: 'Luxury real estate portal with immersive visual experience and fluid navigation.',
+                        project4_short: 'Powerful sound with LED & DMX lighting for parties, quinceañeras, kiosks and events in Barranquilla.',
                         project_view: 'View Project',
                         modal_title: 'Details',
                         modal_purpose: 'Purpose',

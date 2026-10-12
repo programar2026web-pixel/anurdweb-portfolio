@@ -1,0 +1,10 @@
+{
+  "name": "soy-anurdweb",
+  "version": "1.0.0",
+  "description": "Sitio web de portafolio AnurDweb",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,90 @@
+551: 
+552:                 var projectsData = {
+553:                     burger: {
+554:                         img1: 'img/burguer inicio.png',
+555:                         img2: 'img/menu.png',
+556:                         category: { es: 'Landing Page', en: 'Landing Page' },
+557:                         name: 'Burger & Co. <span class="text-accent-400">Artisanal Kitchen</span>',
+558:                         colors: {
+559:                             header: 'bg-accent-500/10',
+560:                             headerIcon: 'text-accent-400',
+561:                             sectionTitle: 'text-accent-400',
+562:                             checkmark: 'bg-accent-500/10',
+563:                             checkIcon: 'text-accent-400',
+564:                             btn: 'bg-gradient-to-r from-accent-500 to-accent-600 text-noir shadow-accent-500/20'
+565:                         },
+566:                         purpose: {
+567:                             es: 'Digitalizar la experiencia de un restaurante de hamburguesas gourmet mediante una interfaz web de alta gama. El objetivo principal es enamorar al usuario a través del contenido visual, estructurar un menú interactivo fluido y simular un flujo de órdenes directo enfocado en disparar las conversiones y ventas del negocio local.',
+568:                             en: 'To digitize the experience of a gourmet burger restaurant through a high-end web interface. The main goal is to captivate the user through visual content, structure a fluid interactive menu, and simulate a direct ordering flow focused on driving conversions and sales for the local business.'
+569:                         },
+570:                         description: {
+571:                             es: 'Diseño web de tipo premium desarrollado bajo una estética de modo oscuro profundo, utilizando contrastes en tonos oro y naranja para acentuar el branding del restaurante. La página cuenta con una arquitectura optimizada para la carga ultrarrápida de imágenes de comida en alta resolución, secciones de menú categorizadas con precios dinámicos, un bloque de control de calidad de ingredientes y un pie de página adaptado con información de contacto directa.',
+572:                             en: 'Premium web design developed under a deep dark mode aesthetic, using orange and gold tones to accentuate the restaurant\'s branding. The page features an architecture optimized for ultra-fast loading of high-resolution food images, categorized menu sections with dynamic pricing, an ingredient quality control block, and an adapted footer with direct contact information.'
+573:                         },
+574:                         features: {
+575:                             es: ['Diseño premium modo oscuro', 'Menú interactivo con precios dinámicos', 'Imágenes optimizadas en alta resolución', 'Control de calidad de ingredientes'],
+576:                             en: ['Premium dark mode design', 'Interactive menu with dynamic pricing', 'Optimized high-resolution images', 'Ingredient quality control']
+577:                         },
+578:                         demo: 'https://burguer-co.netlify.app/'
+579:                     },
+580:                     soulmotion: {
+581:                         img1: 'img/landing.jpeg',
+582:                         img2: 'img/sesion.jpeg',
+583:                         category: { es: 'Plataforma Digital', en: 'Digital Platform' },
+584:                         name: 'Soul<span class="text-cyan-400">Motion</span>',
+585:                         colors: {
+586:                             header: 'bg-cyan-500/10',
+587:                             headerIcon: 'text-cyan-400',
+588:                             sectionTitle: 'text-cyan-400',
+589:                             checkmark: 'bg-cyan-500/10',
+590:                             checkIcon: 'text-cyan-400',
+591:                             btn: 'bg-gradient-to-r from-cyan-500 to-cyan-600 text-noir shadow-cyan-500/20'
+592:                         },
+593:                         purpose: {
+594:                             es: 'SoulMotion surge como una solución tecnológica integral diseñada para transformar el proceso de rehabilitación física y emocional. Su objetivo principal es democratizar el acceso a prótesis personalizadas de alta precisión mediante herramientas de diseño paramétrico, mientras ofrece un acompañamiento emocional continuo a través de inteligencia artificial, garantizando que el usuario se sienta respaldado técnica y psicológicamente durante todo su proceso de adaptación.',
+595:                             en: 'SoulMotion emerges as a comprehensive technological solution designed to transform the physical and emotional rehabilitation process. Its main goal is to democratize access to high-precision personalized prosthetics through parametric design tools, while providing continuous emotional support through artificial intelligence, ensuring the user feels technically and psychologically supported throughout their adaptation process.'
+596:                         },
+597:                         description: {
+598:                             es: 'SoulMotion es una plataforma avanzada que combina el diseño industrial con el desarrollo de software de vanguardia. La aplicación actúa como un laboratorio digital donde los usuarios pueden gestionar el diseño de dispositivos biónicos, integrando herramientas de renderizado 3D y generación automatizada de documentación técnica para su fabricación. Además, incluye un asistente de IA especializado que actúa como un soporte emocional y técnico, adaptándose a las necesidades individuales del paciente y permitiendo una gestión eficiente y humana de la rehabilitación.',
+599:                             en: 'SoulMotion is an advanced platform that combines industrial design with cutting-edge software development. The application acts as a digital laboratory where users can manage the design of bionic devices, integrating 3D rendering tools and automated generation of technical documentation for manufacturing. It also includes a specialized AI assistant that serves as emotional and technical support, adapting to the individual needs of the patient and enabling efficient and humane rehabilitation management.'
+600:                         },
+601:                         features: {
+602:                             es: ['Laboratorio de Diseño 3D', 'Mind IA — Asistente', 'Generación de Fichas Técnicas Automatizadas', 'Ecosistema de Comunidad y Especialistas'],
+603:                             en: ['3D Design Laboratory', 'Mind AI — Assistant', 'Automated Technical Sheet Generation', 'Community & Specialists Ecosystem']
+604:                         },
+605:                         demo: 'https://soulmotion.vercel.app/'
+606:                     },
+607:                     auraestate: {
+608:                         img1: 'img/aura.png',
+609:                         img2: 'img/aura 2.png',
+610:                         category: { es: 'Portal Inmobiliario', en: 'Real Estate Portal' },
+611:                         name: 'Aura <span class="text-emerald-400">Estate</span>',
+612:                         colors: {
+613:                             header: 'bg-emerald-500/10',
+614:                             headerIcon: 'text-emerald-400',
+615:                             sectionTitle: 'text-emerald-400',
+616:                             checkmark: 'bg-emerald-500/10',
+617:                             checkIcon: 'text-emerald-400',
+618:                             btn: 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-noir shadow-emerald-500/20'
+619:                         },
+620:                         purpose: {
+621:                             es: 'Aura Estate nace de la necesidad de transformar el sector inmobiliario digital mediante una experiencia visual inmersiva. El objetivo central fue crear una plataforma que no solo sirva como catálogo de propiedades, sino como una herramienta de prestigio para agencias inmobiliarias que buscan posicionar inmuebles de lujo. Resolvemos la brecha entre la información técnica y la conexión emocional del cliente, ofreciendo una navegación fluida, interactiva y sofisticada que mantiene el enfoque absoluto en la exclusividad de cada propiedad.',
+622:                             en: 'Aura Estate was born from the need to transform the digital real estate sector through an immersive visual experience. The core objective was to create a platform that not only serves as a property catalog but as a prestige tool for real estate agencies looking to position luxury properties. We bridge the gap between technical information and emotional customer connection, offering fluid, interactive, and sophisticated navigation that maintains absolute focus on the exclusivity of each property.'
+623:                         },
+624:                         description: {
+625:                             es: 'Este portal es una solución integral desarrollada bajo una arquitectura de alto rendimiento con React, diseñada para escalar en el mercado de bienes raíces de lujo. Experiencia de Usuario (UX/UI): Implementamos transiciones fluidas y microinteracciones utilizando Framer Motion, logrando que el usuario perciba la elegancia desde el primer clic. Diseño Interactivo: La interfaz utiliza Tailwind CSS para garantizar un diseño minimalista, limpio y moderno, priorizando una jerarquía visual que destaca la calidad de las imágenes y la información clave. ',
+626:                             en: 'This portal is a comprehensive solution developed under a high-performance architecture with React, designed to scale in the luxury real estate market. User Experience (UX/UI): We implemented fluid transitions and microinteractions using Framer Motion, making users perceive elegance from the first click. Interactive Design: The interface uses Tailwind CSS to guarantee a minimalist, clean, and modern design, prioritizing a visual hierarchy that highlights image quality and key information. Data Management: The architecture allows efficient navigation by categories, allowing users to filter and explore properties with pinpoint precision, eliminating any friction in the search process.'
+627:                         },
+628:                         features: {
+629:                             es: ['Arquitectura React de alto rendimiento', 'Transiciones fluidas con Framer Motion', 'Diseño minimalista con Tailwind CSS', 'Navegación eficiente por categorías'],
+630:                             en: ['High-performance React architecture', 'Fluid transitions with Framer Motion', 'Minimalist design with Tailwind CSS', 'Efficient category navigation']
+631:                         },
+632:                         demo: 'https://aura-state.netlify.app/'
+633:                     }
+634:                 };
+635: 
+636:                 var translations = {
+637:                     es: {
+638:                         projects_label: 'Portafolio',
+639:                         projects_title_1: 'Proyectos &',
+640:                         projects_title_2: 'Casos de Estudio',

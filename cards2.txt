@@ -1,0 +1,131 @@
+﻿        </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================================================ -->
+    <main class="relative z-10 pt-28 pb-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Encabezado de la SecciÃ³n -->
+            <div class="mb-16">
+                <span class="inline-block text-xs font-mono text-cyan-400 uppercase tracking-[0.3em] mb-4"
+                    data-translate="projects_label">Portafolio</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-4">
+                    <span data-translate="projects_title_1">Proyectos &</span> <span class="gradient-text-cyan"
+                        data-translate="projects_title_2">Casos de Estudio</span>
+                </h1>
+                <p class="text-base sm:text-lg text-white/40 max-w-2xl font-light" data-translate="projects_subtitle">
+                    Una mirada detallada al cÃ³digo, la arquitectura y el propÃ³sito detrÃ¡s de las soluciones digitales
+                    que he construido.</p>
+            </div>
+
+            <!-- ===== GRID DE PROYECTOS MINIMALISTA ===== -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <!-- ===== TARJETA: BURGER & CO. ===== -->
+                <article
+                    class="project-card group glass rounded-2xl border border-white/5 hover:border-accent-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                    data-project="burger">
+                    <!-- Imagen -->
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="img/burguer inicio.png" alt="Burger & Co."
+                            class="w-full h-full object-cover object-left group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent">
+                        </div>
+                        <!-- Badge -->
+                        <span
+                            class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-accent-500/10 border border-accent-500/20 text-accent-400">
+                            Landing Page
+                        </span>
+                    </div>
+                    <!-- Contenido -->
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/90 text-lg mb-1.5 tracking-tight">
+                            Burger & Co. <span class="text-accent-400">Artisanal Kitchen</span>
+                        </h3>
+                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4"
+                            data-translate="project1_short">
+                            Experiencia web gourmet con menÃº interactivo, diseÃ±o premium y flujo de Ã³rdenes directo.
+                        </p>
+                        <button type="button"
+                            class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
+                            data-translate="project_view">
+                            Ver Proyecto
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ===== TARJETA: SOULMOTION ===== -->
+                <article
+                    class="project-card group glass rounded-2xl border border-white/5 hover:border-accent-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                    data-project="soulmotion">
+                    <!-- Imagen -->
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="img/landing.jpeg" alt="SoulMotion"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent">
+                        </div>
+                        <!-- Badge -->
+                        <span
+                            class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                            Plataforma Digital
+                        </span>
+                    </div>
+                    <!-- Contenido -->
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/90 text-lg mb-1.5 tracking-tight">
+                            Soul<span class="text-cyan-400">Motion</span>
+                        </h3>
+                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4"
+                            data-translate="project2_short">
+                            Plataforma de rehabilitaciÃ³n con diseÃ±o paramÃ©trico 3D y asistente de IA emocional.
+                        </p>
+                        <button type="button"
+                            class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
+                            data-translate="project_view">
+                            Ver Proyecto
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </article>
+                <!-- ===== TARJETA: AURA ESTATE ===== -->
+                <article
+                    class="project-card group glass rounded-2xl border border-white/5 hover:border-accent-500/20 transition-all duration-300 overflow-hidden cursor-pointer"
+                    data-project="auraestate">
+                    <!-- Imagen -->
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="img/aura.png" alt="Aura Estate"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent">
+                        </div>
+                        <!-- Badge -->
+                        <span
+                            class="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-medium uppercase tracking-wider rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                            Portal Inmobiliario
+                        </span>
+                    </div>
+                    <!-- Contenido -->
+                    <div class="p-5">
+                        <h3 class="font-display font-bold text-white/90 text-lg mb-1.5 tracking-tight">
+                            Aura <span class="text-emerald-400">Estate</span>
+                        </h3>
+                        <p class="text-sm text-white/40 leading-relaxed line-clamp-2 mb-4"
+                            data-translate="project3_short">
+                            Portal inmobiliario de lujo con experiencia visual inmersiva y navegaciÃ³n fluida.
+                        </p>
+                        <button type="button"
+                            class="open-project-btn inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors duration-300 group/btn"
+                            data-translate="project_view">
+                            Ver Proyecto
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
